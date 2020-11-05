@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.meiri.jsp.member.model.vo.*"%>
+<%
+   Member m = (Member)session.getAttribute("member");
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -199,6 +202,9 @@
 		border-radius: 25px;
 		border:none;
 }
+.size, .color, .quantity{
+	margin-right: 40px;
+}
 
 </style>
 </head>
@@ -223,8 +229,8 @@
 					</p>
 				<form action="">
 					<hr/>
-					<div class="option" style="display: inline-block; width:600px;">
-						<div class="size" style="float: left;">
+					<div class="option" style="display: flex; width:600px;">
+						<div class="size">
 							<h4>타입</h4>
 							<input type="radio" id="a_type" name="size" value="A">
 							<label for="a_type">A</label> -
@@ -233,8 +239,16 @@
 							<input type="radio" id="c_type" name="size" value="C">		
 							<label for="c_type">C</label>
 						</div>
-						
-						<div class="quantity" id="120000" style="float: right; margin-right:80px;">
+						<div class="color">
+							<h4>색상</h4>
+							<select name="color" id="color">
+								<option value="블랙">블랙</option>
+								<option value="화이트">화이트</option>
+								<option value="골드">골드(+10,000)</option>
+								<option value="로즈골드">로즈골드(+10,000)</option>
+							</select>
+						</div>	
+						<div class="quantity" id="120000">
 							<h4>수량</h4>
 							<span class="plus">+</span>
 							<input type="text" readonly value="1">
@@ -284,7 +298,7 @@
 							 <form action="<%= request.getContextPath() %>/insert.re" style="margin:0;" method="post" enctype="multipart/form-data">
 							 	 <!-- 파일, 상품 번호, 리뷰 내용, 회원 번호 넘겨줘야함 -->
 								<input type="hidden" name="writer" value="<%= m.getUserId() %>">
-								<input type="hidden" name="bno" value="<%= b.getBno() %>" />
+							<%-- 	<input type="hidden" name="bno" value="<%= b.getBno() %>" /> --%>
 								
 								
 							 <textarea name="rcontent" id="rcontent" cols="95" rows="10" value placeholder="내용을 입력해주세요."style="resize:none;"></textarea>

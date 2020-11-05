@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.meiri.jsp.member.model.vo.*"%>
 <%
- 	Member m = (Member)session.getAttribute("member");
+   Member m = (Member)session.getAttribute("member");
 %>    
     
 <!DOCTYPE html>
@@ -33,9 +33,9 @@
 
 <body data-target="#nino-navbar" data-spy="scroll">
 
+
    <!-- Header
     ================================================== -->
-<<<<<<< HEAD
    <header id="nino-header">
       <div id="nino-headerInner">         
                <div class="navbar-subheader">
@@ -44,12 +44,19 @@
                      <li><div id="userLoginBtn" onclick="location.href='/meiri/views/member/memberLoginForm.jsp';">로그인</div></li>&nbsp;&nbsp;
                      <li><div id="userJoinBtn" onclick="location.href='/meiri/views/member/memberJoinForm.jsp';">회원가입</div></li>
                   </ul>
-                  <% } else { %>
+                  <% } else if( m != null && m.getUserId().equals("admin")){ %>
                   <ul> 
-                     <li><div id="userLoginBtn" onclick="location.href='/meiri/views/member/memberLoginForm.jsp';">마이페이지</div></li>&nbsp;&nbsp;
-                     <li><div id="userJoinBtn" onclick="location.href='/meiri/views/member/memberJoinForm.jsp';">로그아웃</div></li>
+                     <li><%= m.getUserName() %></li>
+                     <li><div id="userLoginBtn" onclick="location.href='/meiri/views/mypage/mypage.jsp';">관리자 페이지</div></li>&nbsp;&nbsp;
+                     <li><div id="userJoinBtn" onclick="location.href='/meiri/logout.me';">로그아웃</div></li>
                   </ul>
-                  <% } %>
+                  <% } else {%>
+                  <ul> 
+                     <li><%= m.getUserName() %></li>
+                     <li><div id="userLoginBtn" onclick="location.href='/meiri/views/mypage/mypage.jsp';">마이페이지</div></li>&nbsp;&nbsp;
+                     <li><div id="userJoinBtn" onclick="location.href='/meiri/logout.me';">로그아웃</div></li>
+                  </ul>
+                  <% }%>
                </div>         
          <nav id="nino-navbar" class="navbar navbar-default" role="navigation">
             <div class="container">
@@ -64,36 +71,6 @@
                   <a class="navbar-brand" href="index.jsp"><img src="resources/images/meiri-logo.PNG" alt="" width=30px height=30px style="margin-top:-5px;"/ ></a>
                   <a class="navbar-brand" href="index.jsp">MEIRI</a>
                </div>
-=======
-	<header id="nino-header">
-		<div id="nino-headerInner">			
-					<div class="navbar-subheader">
-						<%if ( m == null ) { %>
-						<ul> 
-							<li><div id="userLoginBtn" onclick="location.href='/meiri/views/member/memberLoginForm.jsp';">로그인</div></li>&nbsp;&nbsp;
-							<li><div id="userJoinBtn" onclick="location.href='/meiri/views/member/memberJoinForm.jsp';">회원가입</div></li>
-						</ul>
-						<% } else { %>
-						<ul> 
-							<li><div id="userLoginBtn" onclick="location.href='/meiri/views/member/memberLoginForm.jsp';">마이페이지</div></li>&nbsp;&nbsp;
-							<li><div id="userJoinBtn" onclick="location.href='/meiri/views/member/memberJoinForm.jsp';">로그아웃</div></li>
-						</ul>
-						<% } %>
-					</div>			
-			<nav id="nino-navbar" class="navbar navbar-default" role="navigation">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nino-navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="index.jsp"><img src="resources/images/meiri-logo.PNG" alt="" width=30px height=30px style="margin-top:-5px;"/ ></a>
-						<a class="navbar-brand" href="index.jsp">MEIRI</a>
-					</div>
->>>>>>> refs/remotes/origin/master
 
                <!-- Collect the nav links, forms, and other content for toggling -->
                <div class="nino-menuItem pull-right">
