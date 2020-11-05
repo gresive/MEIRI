@@ -15,21 +15,31 @@
 <form id="login" action="/meiri/login.me" method="post" >
 <table align="center">
 
+<br /><br /><br /><br /><br /><br />
+
+<div class="titleArea" align="center">
+<h1>Login</h1>
+</div>
+
 <tr>
- <td width="200px">아이디</td>
- <td><input type="text" name="userId" id="userId" required="required"></td>
+
+ <td align="center"><input type="text" name="userId" id="userId" required="required"
+      placeholder="아이디" ></td>
 </tr>
 <tr>
- <td>비밀번호</td>
- <td><input type="password" id="password" name="password" required="required"></td>
+ <td align="center"><input type="password" id="password" name="password" required="required"
+      placeholder="비밀번호"></td>
 </tr>
 
 </table>
+<br /><br />
 
-<input type="submit" value="로그인"> &emsp;
-<input type="button" value="회원가입" onclick="location.href='memberJoinForm.jsp'">
-
-
+<div align="center">
+   <input type="submit" value="로그인" 
+    style=padding=50px;> &emsp;
+   <input type="button" value="회원가입" 
+   onclick="location.href='memberJoinForm.jsp'" >
+</div>
 </form>
 
 </body>

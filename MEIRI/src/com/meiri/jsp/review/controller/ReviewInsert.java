@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class ReviewInsert
  */
@@ -27,8 +28,25 @@ public class ReviewInsert extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 상품 번호, 리뷰 내용, 회원 아이디, 파일
+		  String writer = request.getParameter("writer");
+	      String rcontent = request.getParameter("rcontent");
+	      int pcode = Integer.parseInt(request.getParameter("pcode"));
+		
+	      
+	    /* 커밋 후 수정 쓰지 마세요~~~~~~~
+		ReviewInesrt = new ReviewInsert(bno, content, writer, refcno, clevel);
+		
+		int result = new BoardCommentService().insertComment(comment);
+		
+		if( result > 0 ) {
+			response.sendRedirect("selectOne.bo?bno="+ bno);
+		} else {
+			// 에러 페이지 작성 . . . 생략
+		}
 		
 	}
+	}
+	*/
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
