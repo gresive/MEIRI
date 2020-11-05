@@ -21,7 +21,7 @@
 </tr>
 <tr>
  <td>비밀번호</td>
- <td><input type="password" id="userPwd" name="userPwd" required="required"></td>
+ <td><input type="password" id="password" name="password" required="required"></td>
 </tr>
 
 </table>

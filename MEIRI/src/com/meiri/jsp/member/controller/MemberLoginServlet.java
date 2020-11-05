@@ -30,7 +30,7 @@ public class MemberLoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
-		String passWord = request.getParameter("passWord");
+		String passWord = request.getParameter("password");
 		
 		Member m = new Member(userId, passWord);
 		
