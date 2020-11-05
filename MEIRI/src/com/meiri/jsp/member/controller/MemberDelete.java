@@ -32,7 +32,13 @@ public class MemberDelete extends HttpServlet {
 		
 		String userid = request.getParameter("userid");
 		
-		int result = new MemberService().deleteMember(userid);
+		String adminid = request.getParameter("aid");
+		//!!!!!!! JSP 만들때 경로 뒤에 ?aid=<%=a.getAdminid()%> 로 하기
+		//!!!!!!! a 는 Admin 객체, 변경될 수 있음
+		
+		String umcontent = request.getParameter("content");
+		
+		int result = new MemberService().deleteMember(userid, adminid, umcontent);
 		
 		if( result > 0) {
 			response.sendRedirect("MemberList.me");

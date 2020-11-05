@@ -43,26 +43,25 @@
 
 	<div class="outer">
 		<br>
-		<h2 align="center">게시판 목록</h2>
+		<h2 align="center">제품 목록</h2>
 		<div class="tableArea">
 			<table align="center" id="listArea">
 				<tr>
-					<th width="100px">글 번호</th>
-					<th width="300px">제 목</th>					
-					<th width="100px">작성자</th>					
-					<th width="150px">작성일</th>					
-					<th width="100px">조회수</th>					
-					<th width="100px">첨부파일</th>
+					<th width="100px">상품번호</th>
+					<th width="300px">상품이름</th>					
+					<th width="100px">가 격</th>					
+					<th width="150px">타 입</th>					
+					<th width="100px">색 깔</th>
 				</tr>
 				<% for(Product b : list) { %>
 				<tr>
 					<!-- 공지사항 DB테이블 보고 만들 예정 -->
-					<input type="hidden" value="<%= b.getBno() %>">
-					<td><%= b.getBno() %></td>
-					<td><%= b.getBtitle() %></td>
-					<td><%= b.getBwriter() %></td>
-					<td><%= b.getBdate() %></td>
-					<td><%= b.getBcount() %></td>
+					<input type="hidden" value="<%= b.getPno() %>">
+					<td><%= b.getPno() %></td>
+					<td><%= b.getPname() %></td>
+					<td><%= b.getPprice() %></td>
+					<td><%= b.getPtype() %></td>
+					<td><%= b.getPcolor() %></td>
 				</tr>
 				<% } %>
 			</table>
@@ -72,11 +71,11 @@
 		
 		<div class="pagingArea" align="center">
 		
-		<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=1'"><<</button>
+		<button onclick="location.href='<%= request.getContextPath() %>/productList.pr?currentPage=1'"><<</button>
 			<%  if(currentPage <= 1){  %>
 			<button disabled><</button>
 			<%  }else{ %>
-			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%=currentPage - 1 %>'"><</button>
+			<button onclick="location.href='<%= request.getContextPath() %>/productList.pr?currentPage=<%=currentPage - 1 %>'"><</button>
 			<%  } %>
 			
 			<% for(int p = startPage; p <= endPage; p++){
@@ -84,16 +83,16 @@
 			%>
 				<button disabled><%= p %></button>
 			<%      }else{ %>
-				<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%= p %>'"><%= p %></button>
+				<button onclick="location.href='<%= request.getContextPath() %>/productList.pr?currentPage=<%= p %>'"><%= p %></button>
 			<%      } %>
 			<% } %>
 				
 			<%  if(currentPage >= maxPage){  %>
 			<button disabled>></button>
 			<%  }else{ %>
-			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%=currentPage + 1 %>'">></button>
+			<button onclick="location.href='<%= request.getContextPath() %>/productList.pr?currentPage=<%=currentPage + 1 %>'">></button>
 			<%  } %>
-			<button onclick="location.href='<%= request.getContextPath() %>/selectList.bo?currentPage=<%= maxPage %>'">>></button>
+			<button onclick="location.href='<%= request.getContextPath() %>/productList.pr?currentPage=<%= maxPage %>'">>></button>
 		
 		</div>
 		
@@ -111,9 +110,9 @@
 						}).mouseout(function(){
 							$(this).parent().css({"background" : "black"});
 						}).click(function(){
-							var bno = $(this).parent().find('input').val();
-							location.href = "<%= request.getContextPath() %>/productOne.pr?bno=" + bno;
-																		// 뒤에 bno 수정
+							var pno = $(this).parent().find('input').val();
+							location.href = "<%= request.getContextPath() %>/productOne.pr?pno=" + pno;
+																		
 						});
 					});
 				</script>

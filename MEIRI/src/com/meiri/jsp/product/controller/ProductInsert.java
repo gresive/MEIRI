@@ -36,9 +36,15 @@ public class ProductInsert extends HttpServlet {
 		String type = request.getParameter("type");
 		String color = request.getParameter("color");
 		
+		String adminid = request.getParameter("aid");
+		//!!!!!!! JSP 만들때 경로를 /insert.pr?aid=<%=a.getAdminid()%> 로 하기
+		//!!!!!!! a 는 Admin 객체, 변경될 수 있음
+		
+		String pmcontent = request.getParameter("content");
+		
 		Product p = new Product(name, price, type, color);
 		
-		int result = new ProductService().insertProduct(p);
+		int result = new ProductService().insertProduct(p, pmcontent, adminid);
 		
 		if (result > 0) {
 			response.sendRedirect("productList.pr");

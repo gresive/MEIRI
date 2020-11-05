@@ -11,7 +11,6 @@ public class Product implements Serializable {
 	private int pprice;
 	private String ptype;
 	private String pcolor;
-	private int previews;
 	
 	
 	
@@ -20,14 +19,13 @@ public class Product implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(int pno, String pname, int pprice, String ptype, String pcolor, int previews) {
+	public Product(int pno, String pname, int pprice, String ptype, String pcolor) {
 		super();
 		this.pno = pno;
 		this.pname = pname;
 		this.pprice = pprice;
 		this.ptype = ptype;
 		this.pcolor = pcolor;
-		this.previews = previews;
 	}
 
 
@@ -77,13 +75,5 @@ public class Product implements Serializable {
 
 	public void setPcolor(String pcolor) {
 		this.pcolor = pcolor;
-	}
-
-	public int getPreviews() {
-		return previews;
-	}
-
-	public void setPreviews(int previews) {
-		this.previews = previews;
 	}
 }

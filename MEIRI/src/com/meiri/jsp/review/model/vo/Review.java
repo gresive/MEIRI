@@ -8,11 +8,12 @@ public class Review implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private int rno;
-	private String rtitle;
 	private String rcontent;
 	private Date rdate;
 	private int rstar;
 	private String userid;
+	private int pno;
+	private int fno;
 	
 	
 	public Review() {
@@ -20,31 +21,23 @@ public class Review implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Review(int rno, String rtitle, String rcontent, Date rdate, int rstar, String userid) {
+	public Review(int rno, String rcontent, Date rdate, int rstar, String userid, int pno, int fno) {
 		super();
 		this.rno = rno;
-		this.rtitle = rtitle;
 		this.rcontent = rcontent;
 		this.rdate = rdate;
 		this.rstar = rstar;
 		this.userid = userid;
+		this.pno = pno;
+		this.fno = fno;
 	}
 
-	
 	public int getRno() {
 		return rno;
 	}
 
 	public void setRno(int rno) {
 		this.rno = rno;
-	}
-
-	public String getRtitle() {
-		return rtitle;
-	}
-
-	public void setRtitle(String rtitle) {
-		this.rtitle = rtitle;
 	}
 
 	public String getRcontent() {
@@ -78,8 +71,22 @@ public class Review implements Serializable {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	
-	
-	
+
+	public int getPno() {
+		return pno;
+	}
+
+	public void setPno(int pno) {
+		this.pno = pno;
+	}
+
+	public int getFno() {
+		return fno;
+	}
+
+	public void setFno(int fno) {
+		this.fno = fno;
+	}
+
 	
 }

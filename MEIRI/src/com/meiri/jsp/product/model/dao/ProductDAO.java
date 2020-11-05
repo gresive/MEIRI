@@ -86,12 +86,11 @@ private Properties prop;
 				
 				Product p = new Product();
 				
-				p.setPno(      	rset.getInt("pno"));
+				p.setPno(      	rset.getInt("pcode"));
 				p.setPname(  	rset.getString("pname"));
-				p.setPprice(   	rset.getInt("pprice"));
+				p.setPprice(   	rset.getInt("price"));
 				p.setPtype(		rset.getString("ptype"));
 				p.setPcolor( 	rset.getString("pcolor"));
-				p.setPreviews(	rset.getInt("previews"));
 				
 				list.add(p);
 			}
@@ -126,12 +125,11 @@ private Properties prop;
 			if ( rset.next() ) {
 				p = new Product();
 				
-				p.setPno(      	rset.getInt("pno"));
+				p.setPno(      	rset.getInt("pcode"));
 				p.setPname(  	rset.getString("pname"));
-				p.setPprice(   	rset.getInt("pprice"));
+				p.setPprice(   	rset.getInt("price"));
 				p.setPtype(		rset.getString("ptype"));
 				p.setPcolor( 	rset.getString("pcolor"));
-				p.setPreviews(	rset.getInt("previews"));
 				
 				
 			}
@@ -146,33 +144,61 @@ private Properties prop;
 		return p;
 	}
 
-	public int insertProduct(Connection con, Product p) {
+	public int insertProduct(Connection con, Product p, String pmc, String aid) {
 		
 		int result = 0;
+		int result1 = 0;
+		
 		PreparedStatement pstmt = null;
 		
-		String sql = prop.getProperty("insertProduct");
+		String sql1 = prop.getProperty("insertProduct");
+
 		
 		try {
-			pstmt = con.prepareStatement(sql);
+			pstmt = con.prepareStatement(sql1);
 			
 			pstmt.setString( 1, p.getPname());
 			pstmt.setInt(	 2, p.getPprice());
 			pstmt.setString( 3, p.getPtype());
 			pstmt.setString( 4, p.getPcolor());
 			
-			result = pstmt.executeUpdate();
+			result1 = pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
+		
+		int result2 = 0;
+		String sql2 = prop.getProperty("insertPmanage");
+		
+		if(result1 > 0) {
+		
+			try {
+				pstmt = con.prepareStatement(sql2);
+				
+				pstmt.setString(1, aid);
+				pstmt.setInt(	2, p.getPno());
+				pstmt.setString(3, pmc);
+				
+				
+				result2 = pstmt.executeUpdate();
+				
+			} catch (SQLException e) {
+	
+				e.printStackTrace();
+			}
+		}
+		
+		result = result1 * result2;
+		
 		return result;
 	}
 
-	public int updateProduct(Connection con, Product p) {
+	public int updateProduct(Connection con, Product p, String pmc, String aid) {
 		
 		int result = 0;
+		int result1 = 0;
 		PreparedStatement pstmt = null;
 		
 		String sql = prop.getProperty("updateProduct");
@@ -187,19 +213,43 @@ private Properties prop;
 			pstmt.setString( 4, p.getPcolor());
 			pstmt.setInt(	 5, p.getPno());
 			
-			result = pstmt.executeUpdate();
+			result1 = pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
 		
+		int result2 = 0;
+		String sql2 = prop.getProperty("insertPmanage");
+		
+		if(result1 > 0) {
+		
+			try {
+				pstmt = con.prepareStatement(sql2);
+				
+				pstmt.setString(1, aid);
+				pstmt.setInt(	2, p.getPno());
+				pstmt.setString(3, pmc);
+				
+				
+				result2 = pstmt.executeUpdate();
+				
+			} catch (SQLException e) {
+	
+				e.printStackTrace();
+			}
+		}
+		
+		result = result1 * result2;
+		
 		return result;
 	}
 
-	public int deleteProduct(Connection con, int pno) {
+	public int deleteProduct(Connection con, int pno, String pmc, String aid) {
 		
 		int result = 0;
+		int result1 = 0;
 		PreparedStatement pstmt = null;
 		
 		String sql = prop.getProperty("deleteProduct");
@@ -210,11 +260,34 @@ private Properties prop;
 			
 			pstmt.setInt(1, pno);
 			
-			result = pstmt.executeUpdate();
+			result1 = pstmt.executeUpdate();
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
+		
+		int result2 = 0;
+		String sql2 = prop.getProperty("insertPmanage");
+		
+		if(result1 > 0) {
+		
+			try {
+				pstmt = con.prepareStatement(sql2);
+				
+				pstmt.setString(1, aid);
+				pstmt.setInt(	2, pno);
+				pstmt.setString(3, pmc);
+				
+				
+				result2 = pstmt.executeUpdate();
+				
+			} catch (SQLException e) {
+	
+				e.printStackTrace();
+			}
+		}
+		
+		result = result1 * result2;
 		
 		return result;
 	}

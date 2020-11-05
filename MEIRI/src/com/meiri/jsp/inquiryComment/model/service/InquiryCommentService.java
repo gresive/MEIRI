@@ -27,20 +27,20 @@ public class InquiryCommentService {
 		return result;
 	}
 
-	public ArrayList<InquiryComment> selectList(int bno) {
+	public ArrayList<InquiryComment> selectList(int inqno) {
 		con = getConnection();
 		
-		ArrayList<InquiryComment> clist = inqcDAO.selectList(con, bno);
+		ArrayList<InquiryComment> clist = inqcDAO.selectList(con, inqno);
 		
 		close(con);
 		
 		return clist;
 	}
 
-	public int updateComment(InquiryComment bco) {
+	public int updateComment(InquiryComment inqco) {
 		con = getConnection();
 		
-		int result = inqcDAO.updateComment(con, bco);
+		int result = inqcDAO.updateComment(con, inqco);
 		
 		if(result > 0) {
 			commit(con);

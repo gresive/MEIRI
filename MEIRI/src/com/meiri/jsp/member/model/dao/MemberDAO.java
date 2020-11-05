@@ -145,10 +145,12 @@ public class MemberDAO {
 		return m;
 	}
 
-	public int deleteMember(String userid, Connection con) {
+	public int deleteMember(String userid, Connection con, String aid, String umc) {
 		
 		int result = 0;
+		int result1 = 0;
 		PreparedStatement pstmt = null;
+		
 		String sql = prop.getProperty("deleteMember");
 		
 		
@@ -157,13 +159,32 @@ public class MemberDAO {
 			
 			pstmt.setString(1, userid);
 			
-			result = pstmt.executeUpdate();
+			result1 = pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
 		}
 		
+		int result2 = 0;
+		
+		if(result1 > 0) {
+			sql = prop.getProperty("insertUmanage");
+			
+			try {
+				pstmt = con.prepareStatement(sql);
+				
+				pstmt.setString(1, userid);
+				pstmt.setString(2, aid);
+				pstmt.setString(3, umc);
+				
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+		}
+		
+		result = result1 * result2;
 		
 		return result;
 	}

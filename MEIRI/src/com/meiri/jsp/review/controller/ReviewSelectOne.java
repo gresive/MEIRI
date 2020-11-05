@@ -1,6 +1,7 @@
 package com.meiri.jsp.review.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.meiri.jsp.review.model.service.ReviewService;
-import com.meiri.jsp.review.model.vo.Review;
 
 /**
  * Servlet implementation class ReviewSelectOne
@@ -32,24 +32,25 @@ public class ReviewSelectOne extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int rno = Integer.parseInt(request.getParameter("rno"));
 		
-		Review r = new ReviewService().selectOne(rno);
+		
+		HashMap<String, Object> review 
+		   = new ReviewService().selectOne(rno);
 		
 		String page = "";
 		
-		if( r != null ) {
-			request.setAttribute("review", r);
+		if(review != null && review.get("review") != null) {
+			request.setAttribute("review", review.get("review"));
+			request.setAttribute("fileList", review.get("attachment"));
 			
 			page = "views/review/reviewDetail.jsp";
 		} else {
-			
-			request.setAttribute("error-msg", "게시글 상세조회 실패!");
+			request.setAttribute("exception", new Exception("리뷰 상세 조회 실패"));
+			request.setAttribute("error-msg", "게시글 상세 조회 실패!!");
 			
 			page = "views/common/errorPage.jsp";
-			
 		}
 		
-		request.getRequestDispatcher(page)
-		       .forward(request, response);
+		request.getRequestDispatcher(page).forward(request, response);
 	}
 
 	/**

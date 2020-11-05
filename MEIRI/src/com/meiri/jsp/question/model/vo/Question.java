@@ -7,9 +7,9 @@ public class Question implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private int qno;
-	private String qwriter;
-	private String qtitle;
-	private String qanswer;
+	private String qwriter;	// ADMINID
+	private String qtitle;	// QTITLE
+	private String qanswer;	// QCONTENT
 	
 	
 	public Question() {

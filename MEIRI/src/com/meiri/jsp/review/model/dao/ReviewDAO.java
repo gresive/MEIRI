@@ -10,8 +10,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Properties;
 
+import com.meiri.jsp.review.model.vo.Attachment;
 import com.meiri.jsp.review.model.vo.Review;
 
 public class ReviewDAO {
@@ -87,8 +89,7 @@ public class ReviewDAO {
 				
 				Review r = new Review();
 				
-				r.setRno(		rset.getInt("rno")			);				
-				r.setRtitle(	rset.getString("rtitle")	);
+				r.setRno(		rset.getInt("rno")			);	
 				r.setRcontent(	rset.getString("rcontent")	);
 				r.setRdate(		rset.getDate("rdate")		);
 				r.setRstar(		rset.getInt("rstar")		);
@@ -107,14 +108,16 @@ public class ReviewDAO {
 		return rlist;
 	}
 
-	public Review selectOne(int rno, Connection con) {
+	public HashMap<String, Object> selectOne(int rno, Connection con) {
 		
+		HashMap<String, Object> hmap = new HashMap<>();
+		ArrayList<Attachment> list = new ArrayList<>();
 		Review r = null;
+		
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		
 		String sql = prop.getProperty("selectOne");
-		
 		
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -123,23 +126,42 @@ public class ReviewDAO {
 			
 			rset = pstmt.executeQuery();
 			
-			if ( rset.next() ) {
+			while(rset.next()) {
+				
 				r = new Review();
 				
-				r.setRno(		rset.getInt("rno")			);				
-				r.setRtitle(	rset.getString("rtitle")	);
-				r.setRcontent(	rset.getString("rcontent")	);
-				r.setRdate(		rset.getDate("rdate")		);
-				r.setRstar(		rset.getInt("rstar")		);
-				r.setUserid(	rset.getString("userid")	);
+				r.setRno(rno);
+				r.setRcontent( rset.getString("rcontent"));
+				r.setRdate( rset.getDate("rdate"));
+				r.setRstar( rset.getInt("star"));
+				r.setUserid( rset.getString("userid"));
+				r.setPno( rset.getInt("pcode"));
+				r.setFno(  rset.getInt("fcode"));
+				
+				// ---- 여기까지가 게시글 내용
+				
+				Attachment at = new Attachment();
+				
+				at.setFcode( 	  rset.getInt("fcode"));
+				at.setPcode( 	  rset.getInt("pcode") );
+				at.setOriginname( rset.getString("originname"));
+				at.setChangename( rset.getString("changename"));
+				at.setFilepath(   rset.getString("filepath"));
+				
+				list.add(at);
 			}
 			
+			hmap.put("review", r);
+			hmap.put("attachment", list);
+			
 		} catch (SQLException e) {
-
 			e.printStackTrace();
-		}
+		} finally {
+			close(rset);
+			close(pstmt);
+		}		
 		
-		return r;
+		return hmap;
 	}
 
 	public int deleteReview(int rno, Connection con) {
@@ -159,9 +181,12 @@ public class ReviewDAO {
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
+		} finally {
+			close(pstmt);
 		}
 		
 		
 		return result;
 	}
+	
 }

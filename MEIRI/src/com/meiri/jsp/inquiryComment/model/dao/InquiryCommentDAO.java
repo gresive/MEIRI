@@ -47,11 +47,11 @@ public class InquiryCommentDAO {
 		
 		try {
 			pstmt = con.prepareStatement(sql);
-		
-			pstmt.setInt(1, comment.getInqno());
-			pstmt.setString(2, comment.getCcontent());
-			pstmt.setString(3, comment.getUserId());
 			
+			pstmt.setString(1, comment.getUserId());
+			pstmt.setInt(	2, comment.getInqno());
+			pstmt.setString(3, comment.getCcontent());
+
 			result = pstmt.executeUpdate();			
 			
 		} catch (SQLException e) {
@@ -80,11 +80,11 @@ public class InquiryCommentDAO {
 			while(rset.next()) {
 				InquiryComment inqco = new InquiryComment();
 				
-				inqco.setCno(   rset.getInt(1) );
-				inqco.setInqno(   rset.getInt(2) );
-				inqco.setCcontent( rset.getString(3));
-				inqco.setUserId( rset.getString("userid"));
-				inqco.setCdate( rset.getDate("cdate"));
+				inqco.setCno(     rset.getInt("acode") 		);
+				inqco.setUserId(  rset.getString("adminid")	);
+				inqco.setInqno(   rset.getInt("ccode") 		);
+				inqco.setCcontent(rset.getString("acontent"));
+				inqco.setCdate(   rset.getDate("ndate")		);
 				
 				clist.add(inqco);				
 			}
@@ -110,7 +110,7 @@ public class InquiryCommentDAO {
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setString(1, inqco.getCcontent());
-			pstmt.setInt(2, inqco.getCno());
+			pstmt.setInt(	2, inqco.getCno());
 			
 			result = pstmt.executeUpdate();
 			
@@ -151,18 +151,5 @@ public class InquiryCommentDAO {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

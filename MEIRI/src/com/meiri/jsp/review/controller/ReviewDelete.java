@@ -32,14 +32,20 @@ public class ReviewDelete extends HttpServlet {
 		
 		int rno = Integer.parseInt(request.getParameter("rno"));
 		
-		int result = new ReviewService().deleteReview(rno);
+		ReviewService ts = new ReviewService();
 		
-		if( result > 0) {
+		String root = request.getServletContext().getRealPath("/resources");
+		String savePath = root + "/reviewUploadFiles/";
+		
+		int result = ts.deleteReview(rno, savePath);
+		
+		if( result > 0 ) {
 			response.sendRedirect("reviewList.re");
 		} else {
-			request.setAttribute("error-msg", "자주 묻는 질문 수정 실패!");
-			request.getRequestDispatcher("views/common/errorPage.jsp")
-			       .forward(request, response);
+			request.setAttribute("exception", new Exception("리뷰 삭제 오류!"));
+			request.setAttribute("error-msg", "사진 게시글 삭제 오류 발생!");
+			
+			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
 		}
 	}
 

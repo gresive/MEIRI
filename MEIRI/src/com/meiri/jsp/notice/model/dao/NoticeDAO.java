@@ -86,10 +86,10 @@ public class NoticeDAO {
 				
 				Notice n = new Notice();
 				
-				n.setNno(      rset.getInt("nno"));
+				n.setNno(      rset.getInt("ncode"));
 				n.setAdminid(  rset.getString("adminid"));
 				n.setNtitle(   rset.getString("ntitle"));
-				n.setNdate(   rset.getDate("ndate"));
+				n.setNdate(    rset.getDate("ndate"));
 				n.setNcontent( rset.getString("ncontent"));
 				
 				list.add(n);
@@ -125,7 +125,7 @@ public class NoticeDAO {
 			if ( rset.next() ) {
 				n = new Notice();
 				
-				n.setNno(      rset.getInt("nno"));
+				n.setNno(      rset.getInt("ncode"));
 				n.setAdminid(  rset.getString("adminid"));
 				n.setNtitle(   rset.getString("ntitle"));
 				n.setNdate(    rset.getDate("ndate"));
@@ -177,8 +177,8 @@ public class NoticeDAO {
 		try {
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setString(1, n.getAdminid());
-			pstmt.setString(2, n.getNtitle());
+			pstmt.setString(1, n.getNtitle());
+			pstmt.setString(2, n.getNcontent());
 			pstmt.setInt(	3, n.getNno());
 			
 			result = pstmt.executeUpdate();

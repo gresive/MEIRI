@@ -38,6 +38,12 @@ public class ProductUpdate extends HttpServlet {
 		String type = request.getParameter("type");
 		String color = request.getParameter("color");
 		
+		String adminid = request.getParameter("aid");
+		//!!!!!!! JSP 만들때 경로 뒤에 aid=<%=a.getAdminid()%> 로 하기
+		//!!!!!!! a 는 Admin 객체, 변경될 수 있음
+		
+		String pmcontent = request.getParameter("content");
+		
 		ProductService ns = new ProductService();
 		
 		Product p = ns.selectOne(pno);
@@ -47,7 +53,7 @@ public class ProductUpdate extends HttpServlet {
 		p.setPtype(type);
 		p.setPcolor(color);
 		
-		int result = ns.updateProduct(p);
+		int result = ns.updateProduct(p, pmcontent, adminid);
 		
 		
 		if( result > 0) {

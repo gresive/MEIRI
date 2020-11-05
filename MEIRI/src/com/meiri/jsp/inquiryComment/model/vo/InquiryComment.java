@@ -6,39 +6,43 @@ import java.sql.Date;
 public class InquiryComment implements Serializable {
 
 	private static final long serialVersionUID = 1001L;
-	
-	private int cno;		// 답변 코드
-	private int inqno;		// 상담 코드
-	private String ccontent;// 답변 내용
-	private String userId;  // 작성자(관리자 혹은 질문자)
-	private Date cdate;		// 답변 날짜
+
+	private int cno;		// ACODE
+	private String userId;  // ADMINID
+	private int inqno;		// CCODE
+	private String ccontent;// ACONTENT
+	private Date cdate;		// NDATE
 	
 	public InquiryComment() {
 		super();
 	}
-	
-	public InquiryComment(int cno, int inqno, String ccontent, String cwriter, String userId, Date cdate, int refcno,
-			int clevel) {
+
+
+	public InquiryComment(int cno, String userId, int inqno, String ccontent, Date cdate) {
 		super();
 		this.cno = cno;
+		this.userId = userId;
 		this.inqno = inqno;
 		this.ccontent = ccontent;
-		this.userId = userId;
 		this.cdate = cdate;
 	}
-	
+
+
+
+
 	public InquiryComment(int inqno, String ccontent, String userId) {
 		super();
 		this.inqno = inqno;
 		this.ccontent = ccontent;
 	}
 
+	
 	@Override
 	public String toString() {
-		return "BoardComment [cno=" + cno + ", inqno=" + inqno + ", ccontent=" + ccontent
-				+ ", userId=" + userId + ", cdate=" + cdate + "]";
+		return "InquiryComment [inqno=" + inqno + ", userId=" + userId + ", cno=" + cno + ", ccontent=" + ccontent
+				+ ", cdate=" + cdate + "]";
 	}
-	
+
 	public int getInqno() {
 		return inqno;
 	}

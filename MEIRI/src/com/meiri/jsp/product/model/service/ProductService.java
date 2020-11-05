@@ -48,11 +48,11 @@ public class ProductService {
 	}
 
 
-	public int insertProduct(Product p) {
+	public int insertProduct(Product p, String pmc, String aid) {
 		
 		con = getConnection();
 		
-		int result = pDAO.insertProduct(con, p);
+		int result = pDAO.insertProduct(con, p, pmc, aid);
 		
 		close(con);
 		
@@ -60,11 +60,11 @@ public class ProductService {
 	}
 
 
-	public int updateProduct(Product p) {
+	public int updateProduct(Product p, String pmc, String aid) {
 		
 		con = getConnection();
 		
-		int result = pDAO.updateProduct(con, p);
+		int result = pDAO.updateProduct(con, p, pmc, aid);
 		
 		close(con);
 		
@@ -72,10 +72,10 @@ public class ProductService {
 	}
 
 
-	public int deleteProduct(int pno) {
+	public int deleteProduct(int pno, String pmc, String aid) {
 		con = getConnection();
 		
-		int result = pDAO.deleteProduct(con, pno);
+		int result = pDAO.deleteProduct(con, pno, pmc, aid);
 		
 		close(con);
 		

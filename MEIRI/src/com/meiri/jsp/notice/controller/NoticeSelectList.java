@@ -85,11 +85,13 @@ public class NoticeSelectList extends HttpServlet {
 		
 		// -------------- 페이지 처리 끝! ㅎ.,ㅎ -------------- //
 		
+		
 		list = ns.selectList(currentPage, limit);
 		
 		String page = "";
 		
-		if( list != null && list.size() > 0) {
+		//  && list.size() > 0
+		if( list != null) {
 			PageInfo pi = new PageInfo(currentPage, listCount, limit, 
 					                   maxPage, startPage, endPage);
 			
@@ -97,6 +99,7 @@ public class NoticeSelectList extends HttpServlet {
 			request.setAttribute("list", list);
 			
 			page = "views/notice/noticeList.jsp";
+			
 		} else {
 			request.setAttribute("error-msg", "자주 묻는 질문 조회 실패");
 			

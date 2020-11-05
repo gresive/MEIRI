@@ -88,10 +88,10 @@ public class QuestionDAO {
 				
 				Question q = new Question();
 				
-				q.setQno(      rset.getInt("qno"));
-				q.setQwriter(  rset.getString("qwriter"));
+				q.setQno(      rset.getInt("qcode"));
+				q.setQwriter(  rset.getString("admin"));
 				q.setQtitle(   rset.getString("qtitle"));
-				q.setQanswer(  rset.getString("qanswer"));
+				q.setQanswer(  rset.getString("qcontent"));
 				
 				list.add(q);
 			}
@@ -126,10 +126,10 @@ public class QuestionDAO {
 			if ( rset.next() ) {
 				q = new Question();
 				
-				q.setQno(      rset.getInt("qno"));
-				q.setQwriter(  rset.getString("qwriter"));
+				q.setQno(      rset.getInt("qcode"));
+				q.setQwriter(  rset.getString("admin"));
 				q.setQtitle(   rset.getString("qtitle"));
-				q.setQanswer(  rset.getString("qanswer"));
+				q.setQanswer(  rset.getString("qcontent"));
 
 			}
 			
@@ -177,9 +177,9 @@ public class QuestionDAO {
 		try {
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setString(1, q.getQwriter());
-			pstmt.setString(2, q.getQtitle());
-			pstmt.setInt(3, q.getQno());
+			pstmt.setString(1, q.getQtitle());
+			pstmt.setString(2, q.getQanswer());
+			pstmt.setInt(	3, q.getQno());
 			
 			result = pstmt.executeUpdate();
 			

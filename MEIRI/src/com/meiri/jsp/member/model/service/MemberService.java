@@ -47,11 +47,11 @@ public int getListCount() {
 		return m;
 	}
 
-	public int deleteMember(String userid) {
+	public int deleteMember(String userid, String aid, String umc) {
 		
 		con = getConnection();
 		
-		int result = mdao.deleteMember(userid, con);
+		int result = mdao.deleteMember(userid, con, aid, umc);
 		
 		close(con);
 		

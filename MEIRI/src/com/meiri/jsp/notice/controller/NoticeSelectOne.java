@@ -14,7 +14,7 @@ import com.meiri.jsp.notice.model.vo.Notice;
 /**
  * Servlet implementation class NoticeSelectOne
  */
-@WebServlet("/noticeone.no")
+@WebServlet("/noticeOne.no")
 public class NoticeSelectOne extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

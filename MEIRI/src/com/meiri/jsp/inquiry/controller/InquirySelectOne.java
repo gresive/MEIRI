@@ -1,6 +1,7 @@
 package com.meiri.jsp.inquiry.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.meiri.jsp.inquiry.model.service.InquiryService;
 import com.meiri.jsp.inquiry.model.vo.Inquiry;
+import com.meiri.jsp.inquiryComment.model.service.InquiryCommentService;
+import com.meiri.jsp.inquiryComment.model.vo.InquiryComment;
 
 /**
  * Servlet implementation class InquirySelectOne
@@ -34,11 +37,14 @@ public class InquirySelectOne extends HttpServlet {
 		int inqno = Integer.parseInt(request.getParameter("inqno"));
 		
 		Inquiry inq = new InquiryService().selectOne(inqno);
+		ArrayList<InquiryComment> clist = new InquiryCommentService().selectList(inqno);
+		
 		
 		String page = "";
 		
 		if( inq != null ) {
 			request.setAttribute("inquiry", inq);
+			request.setAttribute("clist", clist);
 			
 			page = "views/inquiry/inquiryDetail.jsp";
 		} else {

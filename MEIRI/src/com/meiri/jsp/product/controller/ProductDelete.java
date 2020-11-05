@@ -31,8 +31,13 @@ public class ProductDelete extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int pno = Integer.parseInt(request.getParameter("pno"));
+		String pmcontent =  request.getParameter("content");
 		
-		int result = new ProductService().deleteProduct(pno);
+		String adminid = request.getParameter("aid");
+		//!!!!!!! JSP 만들때 경로 뒤에 ?aid=<%=a.getAdminid()%> 로 하기
+		//!!!!!!! a 는 Admin 객체, 변경될 수 있음
+		
+		int result = new ProductService().deleteProduct(pno, pmcontent, adminid);
 		
 		if( result > 0) {
 			response.sendRedirect("Product.pr");
