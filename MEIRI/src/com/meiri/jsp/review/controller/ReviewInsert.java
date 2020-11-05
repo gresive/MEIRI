@@ -1,4 +1,4 @@
-package com.kh.jsp.review.controller;
+package com.meiri.jsp.review.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

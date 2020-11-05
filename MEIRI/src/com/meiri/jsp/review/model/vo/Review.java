@@ -1,4 +1,4 @@
-package com.kh.jsp.review.model.vo;
+package com.meiri.jsp.review.model.vo;
 
 import java.io.Serializable;
 
