@@ -26,11 +26,9 @@
 
 </table>
 
+<input type="submit" value="로그인"> &emsp;
+<input type="button" value="회원가입" onclick="location.href='memberJoinForm.jsp'">
 
-<div class="btns" align="center">
-				<div id="goMain" onclick="goMain();">메인으로</div>
-				<div id="loginBtn" onclick="insertMember();">로그인하기</div>
-	</div>
 
 </form>
 
