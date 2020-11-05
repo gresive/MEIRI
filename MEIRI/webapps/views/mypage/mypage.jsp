@@ -24,8 +24,6 @@
 	aside ul{list-style:none;padding:0}
 	aside ul li{clear:both;float:left;margin-top:10px}
 	
-	<!-- ------------------------------------------------- -->
-	
 	body {
         margin:20px auto;
         padding: 0;
