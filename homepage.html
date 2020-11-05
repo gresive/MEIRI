@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,22 +6,22 @@
 	<meta name="description" content="">
 	<meta name="author" content="ninodezign.com, ninodezign@gmail.com">
 	<meta name="copyright" content="ninodezign.com"> 
-	<title>MEIRI</title>
+	<title>Mogo | OnePage Responsive Theme</title>
 	
 	<!-- favicon -->
-    <link rel="shortcut icon" href="resources/images/meiri-logo2.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="resources/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="images/ico/favicon.jpg">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 	
 	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/materialdesignicons.min.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/jquery.mCustomScrollbar.min.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/prettyPhoto.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/unslider.css" />
-	<link rel="stylesheet" type="text/css" href="resources/css/template.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/prettyPhoto.css" />
+	<link rel="stylesheet" type="text/css" href="css/unslider.css" />
+	<link rel="stylesheet" type="text/css" href="css/template.css" />
 	
 </head>
 
@@ -32,15 +30,10 @@
 	<!-- Header
     ================================================== -->
 	<header id="nino-header">
-		<div id="nino-headerInner">			
-					<div class="navbar-subheader">
-						<ul>
-							<li>로그인</li>&nbsp;&nbsp;
-							<li>회원가입</li>
-						</ul>
-					</div>			
+		<div id="nino-headerInner">					
 			<nav id="nino-navbar" class="navbar navbar-default" role="navigation">
 				<div class="container">
+
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nino-navbar-collapse">
@@ -49,38 +42,27 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="index.jsp"><img src="resources/images/meiri-logo.PNG" alt="" width=30px height=30px style="margin-top:-5px;"/ ></a>
-						<a class="navbar-brand" href="index.jsp">MEIRI</a>
+						<a class="navbar-brand" href="homepage.html">Mogo</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="nino-menuItem pull-right">
 						<div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">
 							<ul class="nav navbar-nav">
-								<li><a href="#" class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
 								<li class="active"><a href="#nino-header">Home <span class="sr-only">(current)</span></a></li>
-								<li>
-									<a href="#nino-story" onmouseover="showhead_dept('head_dept02');" onmouseout="hidehead_dept();">제품 정보</a>
-								</li>
-								<li><a href="#nino-services">본사 소개</a></li>
-								<li><a href="#nino-map">오시는 길</a></li>
+								<li><a href="#nino-story">About</a></li>
+								<li><a href="#nino-services">Service</a></li>
+								<li><a href="#nino-ourTeam">Our Team</a></li>
+								<li><a href="#nino-portfolio">Work</a></li>
+								<li><a href="#nino-latestBlog">Blog</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 						<ul class="nino-iconsGroup nav navbar-nav">
 							<li><a href="#"><i class="mdi mdi-cart-outline nino-icon"></i></a></li>
+							<li><a href="#" class="nino-search"><i class="mdi mdi-magnify nino-icon"></i></a></li>
 						</ul>
 					</div>
 				</div><!-- /.container-fluid -->
-					<div id="head_dept02" class="head_dept02">
-							<ul>
-								<li><a href="#">LED 거실등</a></li>
-								<li><a href="#">LED 방등</a></li>
-								<li><a href="#">LED 주방등</a></li>
-								<li><a href="#">식탁/펜던트/포인트</a></li>
-								<li><a href="#">인기 상품</a></li>
-								<li><a href="#">신상품</a></li>
-							</ul>
-					</div>
 			</nav>
 
 			<section id="nino-slider" class="carousel slide container" data-ride="carousel">
@@ -89,29 +71,29 @@
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
 						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading"></span>
-							MEIRI
+							<span class="nino-subHeading">Creative Template</span>
+							Welcome <br>to MoGo
 						</h2>
 						<a href="#" class="nino-btn">Learn more</a>
 					</div>
 					<div class="item">
 						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading"></span>
-							MEIRI
+							<span class="nino-subHeading">Creative Template</span>
+							Welcome <br>to MoGo
 						</h2>
 						<a href="#" class="nino-btn">Learn more</a>
 					</div>
 					<div class="item">
 						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading"></span>
-							MEIRI
+							<span class="nino-subHeading">Creative Template</span>
+							Welcome <br>to MoGo
 						</h2>
 						<a href="#" class="nino-btn">Learn more</a>
 					</div>
 					<div class="item">
 						<h2 class="nino-sectionHeading">
-							<span class="nino-subHeading"></span>
-							MEIRI
+							<span class="nino-subHeading">Creative Template</span>
+							Welcome <br>to MoGo
 						</h2>
 						<a href="#" class="nino-btn">Learn more</a>
 					</div>
@@ -143,244 +125,85 @@
 			</section>
 		</div>
 	</header><!--/#header-->
-	
-	 <section id="nino-whatWeDo">
-    	<div class="container">
-    		<h2 class="nino-sectionHeading">
-				<span class="nino-subHeading">MEIRI</span>
-				회사 정보
-			</h2>
-			<div class="sectionContent">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="text-center">
-							<img src="resources/images/what-we-do/img-1.jpg" alt="">
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingOne">
-									<h4 class="panel-title">
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-											<i class="mdi mdi-chevron-up nino-icon arrow"></i>
-											<i class="mdi mdi-map-marker nino-icon"></i>
-											주소
-										</a>
-									</h4>
-								</div>
-								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									<div class="panel-body">
-										경기도 부천시 삼작로163번길 78 (우)14453
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingTwo">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-											<i class="mdi mdi-chevron-up nino-icon arrow"></i>
-											<i class="mdi mdi-owl nino-icon"></i> 
-											전화 번호
-										</a>
-									</h4>
-								</div>
-								<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									<div class="panel-body">
-										032-683-0222
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingThree">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-											<i class="mdi mdi-chevron-up nino-icon arrow"></i>
-											<i class="mdi mdi-laptop-mac nino-icon"></i> 
-											이용 시간
-										</a>
-									</h4>
-								</div>
-								<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-									<div class="panel-body">
-										평일 9:00 ~ 18:00
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-    	</div>
-    </section><!--/#nino-whatWeDo-->
 
-	<section id="nino-story" class="nino-testimonial bg-white">   
-		<div class="container">
-			<h2 class="nino-sectionHeading" style="color:#1f76bc">
-				제품 정보
-			</h2>
-			<hr />
-		<div class="slideshow-container">
-		<div class="mySlides">
-			<div class="productInfo">
-			  <img src="resources/images/meiri-logo2.png" width=100px height=100px>
-      	      <img src="resources/images/meiri-logo2.png" width=100px height=100px>
-  	  		  <img src="resources/images/meiri-logo2.png" width=100px height=100px>
-      		  <img src="resources/images/meiri-logo2.png" width=100px height=100px>
-      		  <img src="resources/images/meiri-logo2.png" width=100px height=100px>
- 			</div>
-		</div>
-
-		<div class="mySlides">
-  			<div class="productInfo">
-  				<img src="resources/images/meiri-logo2.png" width=100px height=100px>
-  				<img src="resources/images/meiri-logo2.png" width=100px height=100px>
-    		</div>
-		</div>
-
-		<div class="mySlides">
-  			<div class="productInfo">
-  				<img src="resources/images/meiri-logo2.png" width=100px height=100px>
-  				<img src="resources/images/meiri-logo2.png" width=100px height=100px>
-  				<img src="resources/images/meiri-logo2.png" width=100px height=100px>
-    		</div>
-		</div>
-
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		<a class="next" onclick="plusSlides(1)">&#10095;</a>
-	</div>
-	<br>
-		<div style="text-align:center">
-  			<span class="dot" onclick="currentSlide(1)"></span> 
- 			<span class="dot" onclick="currentSlide(2)"></span> 
-  		    <span class="dot" onclick="currentSlide(3)"></span> 
-		</div>
-	<hr />
-	</div>		
-	</section><!--/#nino-story-->
-	
-		<div class="product-heading">
-			<div class="product-subheading">
-				안녕
-			</div>
-		</div>
-	
-	
-	
+	<!-- Story About Us
+    ================================================== -->
 	<section id="nino-story">
 		<div class="container">
 			<h2 class="nino-sectionHeading">
-				LED 거실등
+				<span class="nino-subHeading">What we do</span>
+				Story about us
 			</h2>
-			<div class="sectionProduct">
+			<p class="nino-sectionDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+			<div class="sectionContent">
 				<div class="row nino-hoverEffect">
-					<div class="col-md-3 col-sm-3">
-						<div class="item product">
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
 							<a class="overlay" href="#">
 								<span class="content">
-									제품 1
+									<i class="mdi mdi-account-multiple nino-icon"></i>
+									super team
 								</span>
-								<img src="resources/images/meiri1.jpg" alt="">
+								<img src="images/story/img-1.jpg" alt="">
 							</a>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-3" >
-						<div class="item product">
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
 							<a class="overlay" href="#">
 								<span class="content">
-									제품 2
+									<i class="mdi mdi-image-filter-center-focus-weak nino-icon"></i>
+									Creativity
 								</span>
-								<img src="resources/images/meiri2.jpg" alt="">
+								<img src="images/story/img-2.jpg" alt="">
 							</a>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-3">
-						<div class="item product">
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
 							<a class="overlay" href="#">
 								<span class="content">
-									제품3
+									<i class="mdi mdi-airplay nino-icon"></i>
+									Digital
 								</span>
-								<img src="resources/images/meiri3.jpg" alt="">
-							</a>
-						</div>
-					</div>	
-					<div class="col-md-3 col-sm-3">
-						<div class="item product">
-							<a class="overlay" href="#">
-								<span class="content">
-									제품 4
-								</span>
-								<img src="resources/images/meiri4.jpg" alt="">
+								<img src="images/story/img-3.jpg" alt="">
 							</a>
 						</div>
 					</div>
 				</div>
-				
-				<div class="row nino-hoverEffect">
-					<div class="col-md-3 col-sm-3">
-						<div class="item product">
-							<a class="overlay" href="#">
-								<span class="content">
-									제품 5
-								</span>
-								<img src="resources/images/meiri5.jpg" alt="">
-							</a>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-3" >
-						<div class="item product">
-							<a class="overlay" href="#">
-								<span class="content">
-									제품 6
-								</span>
-								<img src="resources/images/meiri6.jpg" alt="">
-							</a>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-3">
-						<div class="item product">
-							<a class="overlay" href="#">
-								<span class="content">
-									제품 7
-								</span>
-								<img src="resources/images/meiri7.jpg" alt="">
-							</a>
-						</div>
-					</div>	
-					<div class="col-md-3 col-sm-3">
-						<div class="item product">
-							<a class="overlay" href="#">
-								<span class="content">
-									제품 8
-								</span>
-								<img src="resources/images/meiri8.jpg" alt="">
-							</a>
-						</div>
-					</div>
-				</div>
-				
-				
-				
-				
 			</div>
 		</div>		
 	</section><!--/#nino-story-->
-	
-	
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<!-- Counting
+    ================================================== -->
+    <section id="nino-counting">
+    	<div class="container">
+    		<div layout="row" class="verticalStretch">
+    			<div class="item">
+    				<div class="number">42</div>
+    				<div class="text">Web Design Projects</div>
+    			</div>
+    			<div class="item">
+    				<div class="number">123</div>
+    				<div class="text">happy client</div>
+    			</div>
+    			<div class="item">
+    				<div class="number">15</div>
+    				<div class="text">award winner</div>
+    			</div>
+    			<div class="item">
+    				<div class="number">99</div>
+    				<div class="text">cup of coffee</div>
+    			</div>
+    			<div class="item">
+    				<div class="number">24</div>
+    				<div class="text">members</div>
+    			</div>
+    		</div>
+    	</div>
+    </section><!--/#nino-counting-->
+
     <!-- Services
     ================================================== -->
     <section id="nino-services">
@@ -460,8 +283,8 @@
 			</h2>
 			<div class="sectionContent">
 				<div class="nino-devices">
-					<img class="tablet" src="resources/images/unique-design/img-1.png" alt="">
-					<img class="mobile" src="resources/images/unique-design/img-2.png" alt="">
+					<img class="tablet" src="images/unique-design/img-1.png" alt="">
+					<img class="mobile" src="images/unique-design/img-2.png" alt="">
 				</div>
 			</div>
     	</div>
@@ -482,7 +305,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="text-center">
-							<img src="resources/images/what-we-do/img-1.jpg" alt="">
+							<img src="images/what-we-do/img-1.jpg" alt="">
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -597,7 +420,61 @@
 			<p class="nino-sectionDesc">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 			</p>
-			
+			<div class="sectionContent">
+				<div class="row nino-hoverEffect">
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
+							<div class="overlay" href="#">
+								<div class="content">
+									<a href="#" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
+								</div>
+								<img src="images/our-team/img-1.jpg" alt="">
+							</div>
+						</div>
+						<div class="info">
+							<h4 class="name">Matthew Dix</h4>
+							<span class="regency">Graphic Design</span>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
+							<div class="overlay" href="#">
+								<div class="content">
+									<a href="#" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
+								</div>
+								<img src="images/our-team/img-2.jpg" alt="">
+							</div>
+						</div>
+						<div class="info">
+							<h4 class="name">Christopher Campbell</h4>
+							<span class="regency">Branding/UX design</span>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="item">
+							<div class="overlay" href="#">
+								<div class="content">
+									<a href="#" class="nino-icon"><i class="mdi mdi-facebook"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-twitter"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-pinterest"></i></a>
+									<a href="#" class="nino-icon"><i class="mdi mdi-instagram"></i></a>
+								</div>
+								<img src="images/our-team/img-3.jpg" alt="">
+							</div>
+						</div>
+						<div class="info">
+							<h4 class="name">Michael Fertig </h4>
+							<span class="regency">Developer</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section><!--/#nino-ourTeam-->
 
@@ -606,12 +483,12 @@
     <section id="nino-brand">
     	<div class="container">
     		<div class="verticalCenter fw" layout="row">
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="resources/images/brand/img-1.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="resources/images/brand/img-2.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="resources/images/brand/img-3.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="resources/images/brand/img-4.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="resources/images/brand/img-5.png" alt=""></a></div>
-    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="resources/images/brand/img-6.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-1.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-2.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-3.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-4.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-5.png" alt=""></a></div>
+    			<div class="col-md-2 col-sm-4 col-xs-6"><a href="#"><img src="images/brand/img-6.png" alt=""></a></div>
     		</div>
     	</div>
     </section><!--/#nino-brand-->
@@ -632,7 +509,7 @@
 			<ul class="nino-portfolioItems">
 				<li class="item">
 					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-1.jpg">
-						<img src="resources/images/our-work/img-1.jpg" />
+						<img src="images/our-work/img-1.jpg" />
 						<div class="overlay">
 							<div class="content">
 								<i class="mdi mdi-crown nino-icon"></i>
@@ -644,7 +521,7 @@
 				</li>
 				<li class="item">
 					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-2.jpg">
-						<img src="resources/images/our-work/img-2.jpg" />
+						<img src="images/our-work/img-2.jpg" />
 						<div class="overlay">
 							<div class="content">
 								<i class="mdi mdi-cube-outline nino-icon"></i>
@@ -656,7 +533,7 @@
 				</li>
 				<li class="item">
 					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-3.jpg">
-						<img src="resources/images/our-work/img-3.jpg" />
+						<img src="images/our-work/img-3.jpg" />
 						<div class="overlay">
 							<div class="content">
 								<i class="mdi mdi-desktop-mac nino-icon"></i>
@@ -668,7 +545,7 @@
 				</li>
 				<li class="item">
 					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-4.jpg">
-						<img src="resources/images/our-work/img-4.jpg" />
+						<img src="images/our-work/img-4.jpg" />
 						<div class="overlay">
 							<div class="content">
 								<i class="mdi mdi-flower nino-icon"></i>
@@ -680,7 +557,7 @@
 				</li>
 				<li class="item">
 					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-5.jpg">
-						<img src="resources/images/our-work/img-5.jpg" />
+						<img src="images/our-work/img-5.jpg" />
 						<div class="overlay">
 							<div class="content">
 								<i class="mdi mdi-gamepad-variant nino-icon"></i>
@@ -692,7 +569,7 @@
 				</li>
 				<li class="item">
 					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-6.jpg">
-						<img src="resources/images/our-work/img-6.jpg" />
+						<img src="images/our-work/img-6.jpg" />
 						<div class="overlay">
 							<div class="content">
 								<i class="mdi mdi-gnome nino-icon"></i>
@@ -704,7 +581,7 @@
 				</li>
 				<li class="item">
 					<a class="nino-prettyPhoto" rel="prettyPhoto[gallery1]" title="Development Mobile" href="images/our-work/img-7.jpg">
-						<img src="resources/images/our-work/img-7.jpg" />
+						<img src="images/our-work/img-7.jpg" />
 						<div class="overlay">
 							<div class="content">
 								<i class="mdi mdi-guitar-electric nino-icon"></i>
@@ -727,7 +604,7 @@
 					<li>
 						<div layout="row" class="verticalCenter">
 							<div class="nino-avatar fsr">
-								<img class="img-circle img-thumbnail" src="resources/images/testimonial/img-1.jpg" alt="">
+								<img class="img-circle img-thumbnail" src="images/testimonial/img-1.jpg" alt="">
 							</div>
 							<div>
 								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
@@ -738,7 +615,7 @@
 					<li>
 						<div layout="row" class="verticalCenter">
 							<div class="nino-avatar fsr">
-								<img class="img-circle img-thumbnail" src="resources/images/testimonial/img-2.jpg" alt="">
+								<img class="img-circle img-thumbnail" src="images/testimonial/img-2.jpg" alt="">
 							</div>
 							<div>
 								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
@@ -749,7 +626,7 @@
 					<li>
 						<div layout="row" class="verticalCenter">
 							<div class="nino-avatar fsr">
-								<img class="img-circle img-thumbnail" src="resources/images/testimonial/img-3.jpg" alt="">
+								<img class="img-circle img-thumbnail" src="images/testimonial/img-3.jpg" alt="">
 							</div>
 							<div>
 								<p class="quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
@@ -775,7 +652,7 @@
 					<div class="col-md-6">
 						<div layout="row" class="item">
 							<div class="nino-avatar fsr">
-								<img class="img-circle" src="resources/images/happy-client/img-1.jpg" alt="">
+								<img class="img-circle" src="images/happy-client/img-1.jpg" alt="">
 							</div>
 							<div class="info">
 								<h4 class="name">Matthew Dix</h4>
@@ -789,7 +666,7 @@
 					<div class="col-md-6">
 						<div layout="row" class="item">
 							<div class="nino-avatar fsr">
-								<img class="img-circle" src="resources/images/happy-client/img-2.jpg" alt="">
+								<img class="img-circle" src="images/happy-client/img-2.jpg" alt="">
 							</div>
 							<div class="info">
 								<h4 class="name">Nick Karvounis</h4>
@@ -805,7 +682,7 @@
 					<div class="col-md-6">
 						<div layout="row" class="item">
 							<div class="nino-avatar fsr">
-								<img class="img-circle" src="resources/images/happy-client/img-3.jpg" alt="">
+								<img class="img-circle" src="images/happy-client/img-3.jpg" alt="">
 							</div>
 							<div class="info">
 								<h4 class="name">Jaelynn Castillo</h4>
@@ -819,7 +696,7 @@
 					<div class="col-md-6">
 						<div layout="row" class="item">
 							<div class="nino-avatar fsr">
-								<img class="img-circle" src="resources/images/happy-client/img-4.jpg" alt="">
+								<img class="img-circle" src="images/happy-client/img-4.jpg" alt="">
 							</div>
 							<div class="info">
 								<h4 class="name">Mike Petrucci</h4>
@@ -848,7 +725,7 @@
 					<div class="col-md-4 col-sm-4">
 						<article>
 							<div class="articleThumb">
-								<a href="#"><img src="resources/images/our-blog/img-1.jpg" alt=""></a>
+								<a href="#"><img src="images/our-blog/img-1.jpg" alt=""></a>
 								<div class="date">
 									<span class="number">15</span>
 									<span class="text">Jan</span>
@@ -867,7 +744,7 @@
 					<div class="col-md-4 col-sm-4">
 						<article>
 							<div class="articleThumb">
-								<a href="#"><img src="resources/images/our-blog/img-2.jpg" alt=""></a>
+								<a href="#"><img src="images/our-blog/img-2.jpg" alt=""></a>
 								<div class="date">
 									<span class="number">14</span>
 									<span class="text">Jan</span>
@@ -886,7 +763,7 @@
 					<div class="col-md-4 col-sm-4">
 						<article>
 							<div class="articleThumb">
-								<a href="#"><img src="resources/images/our-blog/img-3.jpg" alt=""></a>
+								<a href="#"><img src="images/our-blog/img-3.jpg" alt=""></a>
 								<div class="date">
 									<span class="number">12</span>
 									<span class="text">Jan</span>
@@ -964,21 +841,21 @@
 	        			<h3 class="nino-colHeading">Blogs</h3>
 	        			<ul class="listArticles">
 	        				<li layout="row" class="verticalCenter">
-	        					<a class="articleThumb fsr" href="#"><img src="resources/images/our-blog/img-4.jpg" alt=""></a>
+	        					<a class="articleThumb fsr" href="#"><img src="images/our-blog/img-4.jpg" alt=""></a>
 	        					<div class="info">
 	        						<h3 class="articleTitle"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
 	        						<div class="date">Jan 9, 2016</div>
 	        					</div>
 	        				</li>
 	        				<li layout="row" class="verticalCenter">
-	        					<a class="articleThumb fsr" href="#"><img src="resources/images/our-blog/img-5.jpg" alt=""></a>
+	        					<a class="articleThumb fsr" href="#"><img src="images/our-blog/img-5.jpg" alt=""></a>
 	        					<div class="info">
 	        						<h3 class="articleTitle"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
 	        						<div class="date">Jan 9, 2016</div>
 	        					</div>
 	        				</li>
 	        				<li layout="row" class="verticalCenter">
-	        					<a class="articleThumb fsr" href="#"><img src="resources/images/our-blog/img-6.jpg" alt=""></a>
+	        					<a class="articleThumb fsr" href="#"><img src="images/our-blog/img-6.jpg" alt=""></a>
 	        					<div class="info">
 	        						<h3 class="articleTitle"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing</a></h3>
 	        						<div class="date">Jan 9, 2016</div>
@@ -991,18 +868,18 @@
         			<div class="colInfo">
 	        			<h3 class="nino-colHeading">instagram</h3>
 	        			<div class="instagramImages clearfix">
-	        				<a href="#"><img src="resources/images/instagram/img-1.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-2.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-3.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-4.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-5.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-6.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-7.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-8.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-9.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-3.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-4.jpg" alt=""></a>
-	        				<a href="#"><img src="resources/images/instagram/img-5.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-1.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-2.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-3.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-4.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-5.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-6.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-7.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-8.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-9.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-3.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-4.jpg" alt=""></a>
+	        				<a href="#"><img src="images/instagram/img-5.jpg" alt=""></a>
 	        			</div>
 	        			<a href="#" class="morePhoto">View more photos</a>
         			</div>
@@ -1024,15 +901,15 @@
 	<a href="#" id="nino-scrollToTop">Go to Top</a>
 	
 	<!-- javascript -->
-	<script type="text/javascript" src="resources/js/jquery.min.js"></script>	
-	<script type="text/javascript" src="resources/js/isotope.pkgd.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.prettyPhoto.js"></script>
-	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.hoverdir.js"></script>
-	<script type="text/javascript" src="resources/js/modernizr.custom.97074.js"></script>
-	<script type="text/javascript" src="resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script type="text/javascript" src="resources/js/unslider-min.js"></script>
-	<script type="text/javascript" src="resources/js/template.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>	
+	<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.hoverdir.js"></script>
+	<script type="text/javascript" src="js/modernizr.custom.97074.js"></script>
+	<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="js/unslider-min.js"></script>
+	<script type="text/javascript" src="js/template.js"></script>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>

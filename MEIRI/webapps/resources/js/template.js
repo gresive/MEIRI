@@ -79,4 +79,37 @@ jQuery(function($) {
 		$('html, body').animate({scrollTop : 0},800);
 		return false;
 	});
+	
 });
+
+
+function hidehead_dept() {
+    var obj1 = document.getElementById("head_dept02");
+    obj1.style.display = "none";
+  }
+function showhead_dept(val) {
+    var obj = document.getElementById(val);
+    obj.style.display = "block";
+  }
+
+/* 제품 정보 캐러셀 슬라이드*/
+var slideIndex = 0;
+showSlides();
+
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
