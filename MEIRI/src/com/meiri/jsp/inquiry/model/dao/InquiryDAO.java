@@ -87,11 +87,11 @@ public class InquiryDAO {
 				
 				Inquiry inq = new Inquiry();
 				
-				inq.setInqno(      rset.getInt("inqno"));
-				inq.setInqwriter(  rset.getString("inqwriter"));
-				inq.setInqanswer(  rset.getString("inqanswer"));
-				inq.setInqtitle(   rset.getString("inqtitle"));
-				inq.setInqcontent( rset.getString("inqcontent"));
+				inq.setInqno(      rset.getInt("CCODE"));
+				inq.setInqwriter(  rset.getString("USERID"));
+				inq.setInqanswer(  rset.getString("ADMINID"));
+				inq.setInqtitle(   rset.getString("CTITLE"));
+				inq.setInqcontent( rset.getString("CCONTENT"));
 				
 				list.add(inq);
 			}
@@ -126,11 +126,11 @@ public class InquiryDAO {
 			if ( rset.next() ) {
 				inq = new Inquiry();
 				
-				inq.setInqno(      rset.getInt("inqno"));
-				inq.setInqwriter(  rset.getString("inqwriter"));
-				inq.setInqanswer(  rset.getString("inqanswer"));
-				inq.setInqtitle(   rset.getString("inqtitle"));
-				inq.setInqcontent( rset.getString("inqcontent"));
+				inq.setInqno(      rset.getInt("CCODE"));
+				inq.setInqwriter(  rset.getString("USERID"));
+				inq.setInqanswer(  rset.getString("ADMINID"));
+				inq.setInqtitle(   rset.getString("CTITLE"));
+				inq.setInqcontent( rset.getString("CCONTENT"));
 
 			}
 			

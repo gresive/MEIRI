@@ -30,9 +30,9 @@ public class MemberSelectOne extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int mno = Integer.parseInt(request.getParameter("mno"));
+		String userid = request.getParameter("userid");
 		
-		Member m = new MemberService().selectOne(mno);
+		Member m = new MemberService().selectOne(userid);
 		
 		String page = "";
 		

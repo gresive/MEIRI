@@ -30,7 +30,7 @@ public class JDBCTemplate {
 			//  getConnection( 오라클서버url, 사용자계정, 비밀번호 );
 			con = DriverManager.getConnection(
 							"jdbc:oracle:thin:@localhost:1521:xe", 
-							"JSP", "JSP");
+							"MEIRI", "MEIRI");
 //********************* DB 완성시 반드시 변경할 것 ************************//
 			
 			con.setAutoCommit(false); 

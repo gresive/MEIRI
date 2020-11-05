@@ -1,4 +1,4 @@
-package com.meiri.jsp.common.excepion;
+package com.meiri.jsp.common.exception;
 
 public class NoticeException extends Exception {
 

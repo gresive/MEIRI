@@ -1,4 +1,4 @@
-package com.meiri.jsp.inquiry.model.vo;
+package com.meiri.jsp.common;
 
 import java.io.Serializable;
 

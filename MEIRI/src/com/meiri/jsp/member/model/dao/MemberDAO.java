@@ -109,7 +109,7 @@ public class MemberDAO {
 		return rlist;
 	}
 
-	public Member selectOne(int mno, Connection con) {
+	public Member selectOne(String userid, Connection con) {
 		
 		Member m = null;
 		PreparedStatement pstmt = null;
@@ -121,7 +121,7 @@ public class MemberDAO {
 		try {
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setInt(1, mno);
+			pstmt.setString(1, userid);
 			
 			rset = pstmt.executeQuery();
 			
@@ -145,7 +145,7 @@ public class MemberDAO {
 		return m;
 	}
 
-	public int deleteMember(int mno, Connection con) {
+	public int deleteMember(String userid, Connection con) {
 		
 		int result = 0;
 		PreparedStatement pstmt = null;
@@ -155,7 +155,7 @@ public class MemberDAO {
 		try {
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setInt(1, mno);
+			pstmt.setString(1, userid);
 			
 			result = pstmt.executeUpdate();
 			

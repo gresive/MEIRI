@@ -46,7 +46,7 @@
 						</button>
 						<a class="navbar-brand" href="homepage.html">Mogo</a>
 					</div>
-
+		<button onclick="javascript:location.href='views/admin/adminPage.jsp';">AdminPage</button>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="nino-menuItem pull-right">
 						<div class="collapse navbar-collapse pull-left" id="nino-navbar-collapse">

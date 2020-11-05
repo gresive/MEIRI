@@ -30,9 +30,9 @@ public class MemberDelete extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int mno = Integer.parseInt(request.getParameter("mno"));
+		String userid = request.getParameter("userid");
 		
-		int result = new MemberService().deleteMember(mno);
+		int result = new MemberService().deleteMember(userid);
 		
 		if( result > 0) {
 			response.sendRedirect("MemberList.me");

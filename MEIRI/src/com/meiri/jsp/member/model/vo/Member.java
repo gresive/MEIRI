@@ -9,7 +9,7 @@ public class Member implements Serializable {
 	
 	private String userid;
 	private String password;
-	private String name;
+	private String name;		// USERNAME
 	private String address;
 	private String email;
 	private Date birth;

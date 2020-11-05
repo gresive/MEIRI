@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.meiri.jsp.inquiry.model.vo.PageInfo;
+import com.meiri.jsp.common.PageInfo;
 import com.meiri.jsp.review.model.service.ReviewService;
 import com.meiri.jsp.review.model.vo.Review;
 
@@ -96,7 +96,7 @@ public class ReviewSelectList extends HttpServlet {
 			request.setAttribute("pi", pi);
 			request.setAttribute("list", list);
 			
-			page = "views/inquiry/questionList.jsp";
+			page = "views/review/reviewList.jsp";
 		} else {
 			request.setAttribute("error-msg", "자주 묻는 질문 조회 실패");
 			

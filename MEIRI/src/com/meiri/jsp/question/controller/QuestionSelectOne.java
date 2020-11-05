@@ -14,7 +14,7 @@ import com.meiri.jsp.question.model.vo.Question;
 /**
  * Servlet implementation class QuestionSelectOne
  */
-@WebServlet("/questionone.qu")
+@WebServlet("/questionOne.qu")
 public class QuestionSelectOne extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

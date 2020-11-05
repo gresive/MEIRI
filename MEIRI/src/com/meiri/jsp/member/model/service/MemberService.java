@@ -36,22 +36,22 @@ public int getListCount() {
 		return m;
 	}
 
-	public Member selectOne(int mno) {
+	public Member selectOne(String userid) {
 
 		con = getConnection();
 		
-		Member m = mdao.selectOne(mno, con);
+		Member m = mdao.selectOne(userid, con);
 		
 		close(con);
 		
 		return m;
 	}
 
-	public int deleteMember(int mno) {
+	public int deleteMember(String userid) {
 		
 		con = getConnection();
 		
-		int result = mdao.deleteMember(mno, con);
+		int result = mdao.deleteMember(userid, con);
 		
 		close(con);
 		

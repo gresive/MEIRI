@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.meiri.jsp.inquiry.model.vo.PageInfo;
+import com.meiri.jsp.common.PageInfo;
 import com.meiri.jsp.product.model.service.ProductService;
 import com.meiri.jsp.product.model.vo.Product;
 
@@ -96,7 +96,7 @@ public class ProductSelectList extends HttpServlet {
 			request.setAttribute("pi", pi);
 			request.setAttribute("list", list);
 			
-			page = "views/Product/ProductList.jsp";
+			page = "views/product/productList.jsp";
 		} else {
 			request.setAttribute("error-msg", "자주 묻는 질문 조회 실패");
 			

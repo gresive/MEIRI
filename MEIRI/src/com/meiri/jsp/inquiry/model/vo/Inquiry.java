@@ -7,11 +7,11 @@ public class Inquiry implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	
-	private int inqno;
-	private String inqwriter;
-	private String inqanswer;
-	private String inqtitle;
-	private String inqcontent;
+	private int inqno;			// CCODE
+	private String inqwriter;	// USERID
+	private String inqanswer;	// ADMINID
+	private String inqtitle;	// CTITLE
+	private String inqcontent;	// CCONTENT
 	
 	
 	public Inquiry() {

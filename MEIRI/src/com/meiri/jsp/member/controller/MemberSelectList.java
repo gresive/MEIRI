@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.meiri.jsp.inquiry.model.vo.PageInfo;
+import com.meiri.jsp.common.PageInfo;
 import com.meiri.jsp.member.model.service.MemberService;
 import com.meiri.jsp.member.model.vo.Member;
 
