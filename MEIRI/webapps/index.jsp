@@ -34,6 +34,7 @@
 <body data-target="#nino-navbar" data-spy="scroll">
 
 
+
    <!-- Header -->
    <header id="nino-header">
       <div id="nino-headerInner">         
@@ -264,128 +265,130 @@
           </div>
       </div>
 
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-   </div>
-   <br>
-      <div style="text-align:center">
-           <span class="dot" onclick="currentSlide(1)"></span> 
-          <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-      </div>
-   <hr />
-   </div>      
-   </section><!--/#nino-story-->
-   
-      <div class="product-heading">
-         <div class="product-subheading">
-            안녕
-         </div>
-      </div>
-   
-   
-   
-   <section id="nino-story">
-      <div class="container">
-         <h2 class="nino-sectionHeading">
-            LED 거실등
-         </h2>
-         <div class="sectionProduct">
-            <div class="row nino-hoverEffect">
-               <div class="col-md-3 col-sm-3">
-                  <div class="item product">
-                     <a class="overlay" href="#">
-                        <span class="content">
-                           제품 1
-                        </span>
-                        <img src="resources/images/meiri1.jpg" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-3" >
-                  <div class="item product">
-                     <a class="overlay" href="#">
-                        <span class="content">
-                           제품 2
-                        </span>
-                        <img src="resources/images/meiri2.jpg" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-3">
-                  <div class="item product">
-                     <a class="overlay" href="#">
-                        <span class="content">
-                           제품3
-                        </span>
-                        <img src="resources/images/meiri3.jpg" alt="">
-                     </a>
-                  </div>
-               </div>   
-               <div class="col-md-3 col-sm-3">
-                  <div class="item product">
-                     <a class="overlay" href="#">
-                        <span class="content">
-                           제품 4
-                        </span>
-                        <img src="resources/images/meiri4.jpg" alt="">
-                     </a>
-                  </div>
-               </div>
-            </div>
-            
-            <div class="row nino-hoverEffect">
-               <div class="col-md-3 col-sm-3">
-                  <div class="item product">
-                     <a class="overlay" href="#">
-                        <span class="content">
-                           제품 5
-                        </span>
-                        <img src="resources/images/meiri5.jpg" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-3" >
-                  <div class="item product">
-                     <a class="overlay" href="#">
-                        <span class="content">
-                           제품 6
-                        </span>
-                        <img src="resources/images/meiri6.jpg" alt="">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-3 col-sm-3">
-                  <div class="item product">
-                     <a class="overlay" href="#">
-                        <span class="content">
-                           제품 7
-                        </span>
-                        <img src="resources/images/meiri7.jpg" alt="">
-                     </a>
-                  </div>
-               </div>   
-               <div class="col-md-3 col-sm-3">
-                  <div class="item product">
-                     <a class="overlay" href="#">
-                        <span class="content">
-                           제품 8
-                        </span>
-                        <img src="resources/images/meiri8.jpg" alt="">
-                     </a>
-                  </div>
-               </div>
-            </div>
-            
-            
-            
-            
-         </div>
-      </div>      
-   </section><!--/#nino-story-->
-   
-   
-   
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+	<br>
+		<div style="text-align:center">
+  			<span class="dot" onclick="currentSlide(1)"></span> 
+ 			<span class="dot" onclick="currentSlide(2)"></span> 
+  		    <span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+	<hr />
+	</div>		
+	</section><!--/#nino-story-->
+	
+		<div class="product-heading">
+			<div class="product-subheading">
+				안녕
+			</div>
+		</div>
+	
+	
+	
+	<section id="nino-story">
+		<div class="container">
+			<h2 class="nino-sectionHeading">
+				LED 거실등
+			</h2>
+			<div class="sectionProduct">
+				<div class="row nino-hoverEffect">
+					<div class="col-md-3 col-sm-3" onclick="location.href='/meiri/views/product/productDetail.jsp';">
+						<div class="item product">
+							<a class="overlay" href="#">
+								<span class="content">
+									제품 1
+								</span>
+								<img src="resources/images/meiri1.jpg" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3" >
+						<div class="item product">
+							<a class="overlay" href="#">
+								<span class="content">
+									제품 2
+								</span>
+								<img src="resources/images/meiri2.jpg" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<div class="item product">
+							<a class="overlay" href="#">
+								<span class="content">
+									제품3
+								</span>
+								<img src="resources/images/meiri3.jpg" alt="">
+							</a>
+						</div>
+					</div>	
+					<div class="col-md-3 col-sm-3">
+						<div class="item product">
+							<a class="overlay" href="#">
+								<span class="content">
+									제품 4
+								</span>
+								<img src="resources/images/meiri4.jpg" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row nino-hoverEffect">
+					<div class="col-md-3 col-sm-3">
+						<div class="item product">
+							<a class="overlay" href="#">
+								<span class="content">
+									제품 5
+								</span>
+								<img src="resources/images/meiri5.jpg" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3" >
+						<div class="item product">
+							<a class="overlay" href="#">
+								<span class="content">
+									제품 6
+								</span>
+								<img src="resources/images/meiri6.jpg" alt="">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3">
+						<div class="item product">
+							<a class="overlay" href="#">
+								<span class="content">
+									제품 7
+								</span>
+								<img src="resources/images/meiri7.jpg" alt="">
+							</a>
+						</div>
+					</div>	
+					<div class="col-md-3 col-sm-3">
+						<div class="item product">
+							<a class="overlay" href="#">
+								<span class="content">
+									제품 8
+								</span>
+								<img src="resources/images/meiri8.jpg" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				
+			</div>
+		</div>		
+	</section><!--/#nino-story-->
+	
+	
+	
+
 
    
    
