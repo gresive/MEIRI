@@ -40,5 +40,4 @@
 	
 </body>
 
->>>>>>> refs/remotes/origin/kij_branch
 </html>
