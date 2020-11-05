@@ -70,7 +70,7 @@
 
 <body>
 
-	<%@ include file="/views/common/header.jsp" %>
+	
 	
 	<br />
 	<br />
@@ -106,7 +106,7 @@
 	
 	<br /><br />
 	
-	<%@ include file="/views/common/footer.jsp" %> <!-- footer 삽입 -->
+ <!-- footer 삽입 -->
 	
 </body>
 

@@ -14,7 +14,7 @@
 
 <body>
 
-	<%@ include file="/views/common/header.jsp" %>
+
 	
 	<h2 align="center">CONTACT US</h2>
 	
@@ -33,7 +33,6 @@
 		}).render();
 	</script>
 	
-	<%@ include file="/views/common/footer.jsp" %>
-
+	
 </body>
 </html>
