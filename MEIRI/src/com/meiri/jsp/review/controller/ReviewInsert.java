@@ -17,6 +17,7 @@ import com.kh.jsp.thumb.model.vo.Attachment;
 import com.kh.jsp.thumb.model.vo.Thumbnail;
 import com.meiri.jsp.productfile.model.vo.productfile;
 import com.meiri.jsp.review.common.MyRenamePolicy;
+import com.meiri.jsp.review.model.service.ReviewService;
 import com.meiri.jsp.review.model.vo.Review;
 import com.oreilly.servlet.MultipartRequest;
 
@@ -94,16 +95,16 @@ public class ReviewInsert extends HttpServlet {
 				
 				for(int i = originNames.size() - 1; i >= 0; i--) {
 					// 기존에 역순으로 가져온 파일들을 올바른 순서로 재정렬
-					Attachment at = new Attachment();
+					productfile pf = new productfile();
 					
-					at.setFilepath(savePath);
-					at.setOriginname(originNames.get(i));
-					at.setChangename(changeNames.get(i));
+					pf.setFilepath(savePath);
+					pf.setOriginname(originNames.get(i));
+					pf.setChangename(changeNames.get(i));
 					
-					list.add(at);
+					list.add(pf);
 				}
 				
-				ThumbnailService ts = new ThumbnailService();
+				ReviewService rs = new ReviewService();
 				
 				int result = ts.insertThumbnail(t, list);
 				
