@@ -1,21 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.meiri.jsp.member.model.vo.*" %>
- <%
-	Member m = (Member)session.getAttribute("member");
-  %>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="/myWeb/resources/js/jquery.min.js"> </script>
-<title>상단바</title>
+<title>(주)메이리</title>
+
 <style>
-<nav id="nino-navbar" class="navbar navbar-default" role="navigation">
-				<div class="container">
+
 </style>
 
 </head>
-<body>
 
+<body>
+	
+	<div class="wrap">
+		<div class="nav">
+			<div class="menu" onclick="">자주묻는질문</div>
+			<div class="menu" onclick="">공지사항</div>
+			<div class="menu" onclick="">Q&amp;A</div>
+			<div class="menu" onclick="">MYPAGE</div>
+		</div>
+	</div>
+	
+		<script>
+		function goHome(){ 		//자주묻는질문
+			location.href="";
+		}
+		function goNotice(){ 	//공지사항
+			location.href="";
+		}
+		function goBoard(){ 	//Q & A
+			location.href="";
+		}
+		function goMypage(){	//mypage 홈 
+			location.href="";
+		}
+	</script>
+	
 </body>
+
+>>>>>>> refs/remotes/origin/kij_branch
 </html>
