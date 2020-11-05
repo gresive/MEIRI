@@ -75,7 +75,6 @@
 	<%@ include file="/views/common/header.jsp" %> <!-- header 삽입 -->
 	<br />
 	
-	
 	<div id="btn_group">	<!-- onclick 추가 -->
 		<button id="btn1" onclick="">F&A<br><span>자주묻는질문</span></button> 
 		<button id="btn2" onclick="">Q&A<br><span>질문과 답변</span></button>
@@ -83,9 +82,7 @@
 		<button id="btn4" onclick="">MYPAGE<br><span>내 정보</span></button>  
 	</div>
 	
-	<!-- -------------------------------------------------------------- -->
-	
-		
+
 	<ul id="navi">
         <li class="group">
             <div class="title">title 1</div>
