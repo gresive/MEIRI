@@ -214,6 +214,9 @@
  	  margin-right: 40px;
 >>>>>>> refs/remotes/origin/master
 }
+.size, .color, .quantity{
+	margin-right: 40px;
+}
 
 </style>
 </head>
@@ -280,6 +283,7 @@
          </div>
       </div>
    </div>
+
 </section>
 
 <section class="product_detailinfo">
@@ -303,6 +307,7 @@
                      <p style="font-size: 12px;">
                         REVIEW | <span>리뷰와 관련없는 글은 관리자에 의해 삭제 처리됩니다.</span>
                       </p>
+
 
                       <form action="<%= request.getContextPath() %>/insert.re" style="margin:0;" method="post" enctype="multipart/form-data">
                           <!-- 파일, 상품 번호, 리뷰 내용, 회원 번호 넘겨줘야함 -->
@@ -329,6 +334,7 @@
             </div>
          </div>
       </div>
+>>>>>>> refs/remotes/origin/master
 
       <section class="product_review">
          <div class="container">
