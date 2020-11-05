@@ -26,12 +26,12 @@
 				</tr>
 				<tr>
 					<td>비밀번호</td>
-					<td><input type="password" id="userPwd" name="userPwd" required="required"></td>
+					<td><input type="password" id="password" name="password" required="required"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>비밀번호확인</td>
-					<td><input type="password" id="userPwd2" name="userPwd2"></td>
+					<td><input type="password" id="password2" name="password2"></td>
 					<td><label id="pwdResult"></label></td>
 				</tr>
 				<tr>
@@ -41,7 +41,7 @@
 				</tr>
 				<tr>
 					<td>생년월일 </td>
-					<td><input type="text" name="age"></td>
+					<td><input type="text" name="birth"></td>
 					<td></td>
                 </tr>
                 <tr>
@@ -101,8 +101,8 @@
 				}
 				
 				$("#joinForm").submit(function(event){
-					if($("#userPwd").val() == "" || $("#userId").val() == "") alert("아이디나 비밀번호는 필수 값입니다.");
-					else if($('#userPwd').val() != $('#userPwd2').val()) alert("비밀번호가 일치하지 않습니다.");
+					if($("#password").val() == "" || $("#userId").val() == "") alert("아이디나 비밀번호는 필수 값입니다.");
+					else if($('#password').val() != $('#password2').val()) alert("비밀번호가 일치하지 않습니다.");
 					else return;
 					event.preventDefault();
 				});
@@ -152,12 +152,12 @@
 			    };
 				
 			function goMain(){
-				location.href='/myWeb/index.jsp';
+				location.href='/meiri/index.jsp';
 			};
 			
 			$('#idCheck').on('click',function(){
 				$.ajax({
-					url : '/myWeb/idDup.me',
+					url : '/meiri/idDup.me',
 					type : 'post',
 					data : { userId : $('#userId').val() },
 					success : function(data){
@@ -176,27 +176,7 @@
 				});
 			});
 			
-			$('#nameCheck').on('click',function(){
-				$.ajax({
-					url : '/myWeb/idDup.me',
-					type : 'post',
-					data : { userId : $('#useNName').val() },
-					success : function(data){
-						// console.log(data);
-						
-						// 전달된 결과가 0이면 사용자 없음 : 가입 가능!
-						//     ' '       1    `  `    있음 : 가입 불가!
-						if ( data == 0 ) {
-							alert("사용 가능한 닉네임입니다.");
-						} else {
-							alert("이미 사용 중인 닉네임입니다.");
-						}
-	 				}, error : function(){
-						console.log("에러 발생");
-					}
-				});
-			});
-				
+		
 				
 			</script>
 				

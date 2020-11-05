@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.meiri.jsp.member.model.vo.*"%>
+<%
+	Member m = (Member)session.getAttribute("member");
+%>    
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,10 +38,17 @@
 	<header id="nino-header">
 		<div id="nino-headerInner">			
 					<div class="navbar-subheader">
-						<ul>
-							<li>로그인</li>&nbsp;&nbsp;
-							<li>회원가입</li>
+						<%if ( m == null ) { %>
+						<ul> 
+							<li><div id="userLoginBtn" onclick="location.href='/meiri/views/member/memberLoginForm.jsp';">로그인</div></li>&nbsp;&nbsp;
+							<li><div id="userJoinBtn" onclick="location.href='/meiri/views/member/memberJoinForm.jsp';">회원가입</div></li>
 						</ul>
+						<% } else { %>
+						<ul> 
+							<li><div id="userLoginBtn" onclick="location.href='/meiri/views/member/memberLoginForm.jsp';">마이페이지</div></li>&nbsp;&nbsp;
+							<li><div id="userJoinBtn" onclick="location.href='/meiri/views/member/memberJoinForm.jsp';">로그아웃</div></li>
+						</ul>
+						<% } %>
 					</div>			
 			<nav id="nino-navbar" class="navbar navbar-default" role="navigation">
 				<div class="container">
