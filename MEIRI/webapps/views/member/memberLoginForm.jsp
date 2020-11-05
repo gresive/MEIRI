@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <script src="<%=request.getContextPath()%>/resources/js/jquery.min.js"></script>
 <title>로그인</title>
+<style>
+ .title{
+   color :  navy
+ };
+</style>
 </head>
 <body>
 <%@ include file="../common/header.jsp" %>
@@ -18,7 +23,7 @@
 <br /><br /><br /><br /><br />
 
 <div class="titleArea" align="center">
-<h1>Login</h1>
+<h1 class="title">Login</h1>
 </div>
 
 <tr>
@@ -34,9 +39,9 @@
 </table>
 <br /><br />
 
-<div align="center">
+<div align="center" >
    <input type="submit" value="로그인" 
-    style=padding=50px;> &emsp;
+    > &emsp;
    <input type="button" value="회원가입" 
    onclick="location.href='memberJoinForm.jsp'" >
 </div>
