@@ -11,6 +11,7 @@
 
 	body{
  	text-align: center; 
+ 	overflow-x:hidden;
 	}
 	
 	#btn1{ width:200px; height:160px; } 
@@ -20,15 +21,15 @@
 	#btn_group button{ border: 1px solid skyblue; background-color: rgba(0,0,0,0); color: skyblue; padding: 5px; margin:auto;} 
 	#btn_group button:hover{ color:white; background-color: skyblue; }
 	
-	aside{width:100px;background:pink}
-	aside ul{list-style:none;padding:0}
-	aside ul li{clear:both;float:left;margin-top:10px}
+	
+	<!-- ------------------------------------------------- -->
 	
 	body {
         margin:20px auto;
         padding: 0;
         font-family:"맑은 고딕";
         font-size:0.9em;
+        
 	}
 	    ul#navi {
 	        width: 200px;
@@ -41,13 +42,9 @@
 	}
 	    li.group {
 	        margin-bottom: 3px;
+	        
 	}
-	    li.group div.title {
-	        height: 35px;
-	        line-height: 35px;
-	        background:#9ab92e;
-	        cursor:pointer;
-	}
+	   
 	    ul.sub li {
 	        margin-bottom: 2px;
 	        height:35px;
@@ -66,14 +63,20 @@
 	        background:#cf0;
 	}
 	
+	
 </style>
 
 </head>
 
 <body>
 
-	<%@ include file="/views/common/header.jsp" %> <!-- header 삽입 -->
+	<%@ include file="/views/common/header.jsp" %>
+	
 	<br />
+	<br />
+	<br />
+	<br />
+	
 	
 	<div id="btn_group">	<!-- onclick 추가 -->
 		<button id="btn1" onclick="">F&A<br><span>자주묻는질문</span></button> 
@@ -82,22 +85,25 @@
 		<button id="btn4" onclick="">MYPAGE<br><span>내 정보</span></button>  
 	</div>
 	
-
+	<!-- -------------------------------------------------------------- -->
+	
+		
 	<ul id="navi">
         <li class="group">
-            <div class="title">title 1</div>
             <ul class="sub">
-                <li><a href="#">sub1</a></li>
-                <li><a href="#">sub1</a></li>
-                <li><a href="#">sub1</a></li>
-                <li><a href="#">sub1</a></li>
+                <li><a href="#">작성한 리뷰 확인</a></li>
+                <li><a href="#">작성한 댓글 확인</a></li>
+                <li><a href="#">문의 내용 확인</a></li>
+                <li><a href="/myWeb/views/basket/basketShopping.jsp">장바구니</a></li>
+            	<li><a href="/myWeb/views/directions/directions.jsp">주문조회</a></li>
             </ul>
         </li>
     </ul>
 	
-	
-	
+	<script>
 		
+	</script>
+	
 	<br /><br />
 	
 	<%@ include file="/views/common/footer.jsp" %> <!-- footer 삽입 -->

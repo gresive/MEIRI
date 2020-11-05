@@ -13,6 +13,16 @@
 </head>
 
 <body>
+
+	<div class="wrap">
+		<ul class="nav">
+			<li class="menu">HOME</li>
+			<li class="menu">제품정보</li>
+			<li class="menu"><a href="/myWeb/views/introduction/introductionCompany.jsp">본사소개</a></li>
+			<li class="menu"><a href="/myWeb/views/directions/directions.jsp">오시는길</a></li>
+			<li class="menu"><a href="/myWeb/views/mypage/mypage.jsp">마이페이지</a></li>
+		</ul>
+	</div>
 	
 	<div class="wrap">
 		<div class="nav">
