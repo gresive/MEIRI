@@ -33,6 +33,7 @@
 
 <body data-target="#nino-navbar" data-spy="scroll">
 
+
 	<!-- Header
     ================================================== -->
 	<header id="nino-header">
@@ -43,12 +44,19 @@
 							<li><div id="userLoginBtn" onclick="location.href='/meiri/views/member/memberLoginForm.jsp';">로그인</div></li>&nbsp;&nbsp;
 							<li><div id="userJoinBtn" onclick="location.href='/meiri/views/member/memberJoinForm.jsp';">회원가입</div></li>
 						</ul>
-						<% } else { %>
+						<% } else if( m != null && m.getUserId().equals("admin")){ %>
 						<ul> 
-							<li><div id="userLoginBtn" onclick="location.href='/meiri/views/member/memberLoginForm.jsp';">마이페이지</div></li>&nbsp;&nbsp;
-							<li><div id="userJoinBtn" onclick="location.href='/meiri/views/member/memberJoinForm.jsp';">로그아웃</div></li>
+							<li><%= m.getUserName() %></li>
+							<li><div id="userLoginBtn" onclick="location.href='/meiri/views/mypage/mypage.jsp';">관리자 페이지</div></li>&nbsp;&nbsp;
+							<li><div id="userJoinBtn" onclick="location.href='/meiri/logout.me';">로그아웃</div></li>
 						</ul>
-						<% } %>
+						<% } else {%>
+						<ul> 
+							<li><%= m.getUserName() %></li>
+							<li><div id="userLoginBtn" onclick="location.href='/meiri/views/mypage/mypage.jsp';">마이페이지</div></li>&nbsp;&nbsp;
+							<li><div id="userJoinBtn" onclick="location.href='/meiri/logout.me';">로그아웃</div></li>
+						</ul>
+						<% }%>
 					</div>			
 			<nav id="nino-navbar" class="navbar navbar-default" role="navigation">
 				<div class="container">
@@ -285,7 +293,7 @@
 			</h2>
 			<div class="sectionProduct">
 				<div class="row nino-hoverEffect">
-					<div class="col-md-3 col-sm-3">
+					<div class="col-md-3 col-sm-3" onclick="location.href='/meiri/views/product/productDetail.jsp';">
 						<div class="item product">
 							<a class="overlay" href="#">
 								<span class="content">
