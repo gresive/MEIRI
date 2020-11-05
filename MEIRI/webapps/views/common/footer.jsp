@@ -90,14 +90,24 @@
 	}
 	
 	.footer-bottom {
-	  	margin-top: 2em;
+	  	margin-top: 0em;
 	    border-top: 1px solid #DDDDDD;
-	    padding-top: 20px;
+	    padding-top: 0px;
 	    padding-bottom: 10px;
 	}
 	.footer-bottom p.pull-left {
 	    padding-top: 6px;
 	  	font-size: 0.75em
+	}
+	
+	#box1 {
+		float:left; width:33%; 
+	}
+	#box2 {
+		float:left; width:33%;
+	}
+	#box3 {
+		float:left; width:33%;
 	}
 
 	
@@ -107,11 +117,11 @@
 <footer>
     <div class="footer">
    
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+                <div id="box1" >
                     <h4> Brand Name </h4>
                 </div>
                 
-                <div class="col-lg-3 col-sm-2 col-xs-3">
+                <div id="box2">
                     <h3> Contact </h3>
                     <ul>
                         <li><a class="email"href="#"> insert email here </a></li>
@@ -120,7 +130,8 @@
                     </ul>
                 </div>
                 
-                <div class="col-lg-3 col-sm-2 col-xs-4">
+                <div id="box3">
+                	<h3> Company </h3>
                     <ul>
                         <li> <a href="#"> ABOUT US</a></li>
                         <li> <a href="#"> CURRENT SERIES </a></li>
@@ -128,14 +139,8 @@
                         <li> <a href="#"> LOOKING BACK </a></li>
                     </ul>
                </div>
+              
+               <p>since~~</p>
  
-                          
-    <div class="footer-bottom">
-        <div class="container">
-            <p class="pull-left copyright"> Copyright © Footer 2014. All right reserved. </p>
-       
-        </div>
-    </div>
-
 	</div>
 </footer>
