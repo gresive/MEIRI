@@ -297,7 +297,7 @@
 
 							 <form action="<%= request.getContextPath() %>/insert.re" style="margin:0;" method="post" enctype="multipart/form-data">
 							 	 <!-- 파일, 상품 번호, 리뷰 내용, 회원 번호 넘겨줘야함 -->
-								<input type="hidden" name="writer" value="<%= m.getUserId() %>">
+								<input type="hidden" name="userId" value="<%= m.getUserId() %>">
 							<%-- 	<input type="hidden" name="bno" value="<%= b.getBno() %>" /> --%>
 								
 								

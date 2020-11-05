@@ -34,8 +34,7 @@
 <body data-target="#nino-navbar" data-spy="scroll">
 
 
-   <!-- Header
-    ================================================== -->
+   <!-- Header -->
    <header id="nino-header">
       <div id="nino-headerInner">         
                <div class="navbar-subheader">
