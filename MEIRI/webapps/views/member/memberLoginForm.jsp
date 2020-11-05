@@ -15,7 +15,7 @@
 <form id="login" action="/meiri/login.me" method="post" >
 <table align="center">
 
-<br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br />
 
 <div class="titleArea" align="center">
 <h1>Login</h1>
