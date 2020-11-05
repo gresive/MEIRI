@@ -1,65 +1,47 @@
 package com.meiri.jsp.review.model.vo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Review implements Serializable {
 
 	private static final long serialVersionUID = 123123L;
 	
-	private int rno;
-	private String title; // 제목
-	private String rcontent;
-	private String rdate;
-	private int mno; // 회원 아이디
-	private int ano; // 관리자 아이디
-	private int pno; // 제품 번호
+	private int rcode;
+	private String rcontent; // 제목
+	private String rdate; // 리뷰 남긴 날짜
+	private String userid; // 회원 아이디
+	private int pcode; // 제품 번호
+	private int fcode; // 파일 번호
+	
+	private ArrayList<productfile> productfile;
 	
 	public Review() {
 		super();
 	}
 
-	public Review(int rno, String title, String rcontent, String rdate, int mno, int ano, int pno) {
+	public Review(int rcode, String rcontent, String rdate, int userid, int pcode, int fcode) {
 		super();
-		this.rno = rno;
-		this.title = title;
+		this.rcode = rcode;
 		this.rcontent = rcontent;
 		this.rdate = rdate;
-		this.mno = mno;
-		this.ano = ano;
-		this.pno = pno;
-	}
-	
-	
-	// 리뷰 작성 시 사용
-	public Review(int rno, String title, String rcontent, int mno, int pno) {
-		super();
-		this.rno = rno;
-		this.title = title;
-		this.rcontent = rcontent;
-		this.mno = mno;
-		this.pno = pno;
+		this.userid = userid;
+		this.pcode = pcode;
+		this.fcode = fcode;
 	}
 
 	@Override
 	public String toString() {
-		return "Review [rno=" + rno + ", title=" + title + ", rcontent=" + rcontent + ", rdate=" + rdate + ", mno=" + mno
-				+ ", ano=" + ano + "]";
+		return "Review [rcode=" + rcode + ", rcontent=" + rcontent + ", rdate=" + rdate + ", userid=" + userid
+				+ ", pcode=" + pcode + ", fcode=" + fcode + "]";
 	}
 
-	public int getRno() {
-		return rno;
+	public int getRcode() {
+		return rcode;
 	}
 
-	public void setRno(int rno) {
-		this.rno = rno;
-	}
-
-	public String gettitle() {
-		return title;
-	}
-
-	public void settitle(String title) {
-		this.title = title;
+	public void setRcode(int rcode) {
+		this.rcode = rcode;
 	}
 
 	public String getRcontent() {
@@ -78,21 +60,31 @@ public class Review implements Serializable {
 		this.rdate = rdate;
 	}
 
-	public int getMno() {
-		return mno;
+	public String getUserid() {
+		return userid;
 	}
 
-	public void setMno(int mno) {
-		this.mno = mno;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 
-	public int getAno() {
-		return ano;
+	public int getPcode() {
+		return pcode;
 	}
 
-	public void setAno(int ano) {
-		this.ano = ano;
+	public void setPcode(int pcode) {
+		this.pcode = pcode;
 	}
+
+	public int getFcode() {
+		return fcode;
+	}
+
+	public void setFcode(int fcode) {
+		this.fcode = fcode;
+	}
+	
+	
 	
 	
 	

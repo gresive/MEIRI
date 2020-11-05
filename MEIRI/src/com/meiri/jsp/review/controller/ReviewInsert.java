@@ -1,12 +1,28 @@
 package com.meiri.jsp.review.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Enumeration;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
+=======
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
+
+import com.kh.jsp.thumb.model.service.ThumbnailService;
+import com.kh.jsp.thumb.model.vo.Attachment;
+import com.kh.jsp.thumb.model.vo.Thumbnail;
+import com.meiri.jsp.productfile.model.vo.productfile;
+import com.meiri.jsp.review.common.MyRenamePolicy;
+import com.meiri.jsp.review.model.service.ReviewService;
+import com.meiri.jsp.review.model.vo.Review;
+import com.oreilly.servlet.MultipartRequest;
+>>>>>>> refs/remotes/origin/master
 
 /**
  * Servlet implementation class ReviewInsert
@@ -43,6 +59,97 @@ public class ReviewInsert extends HttpServlet {
 		} else {
 			// 에러 페이지 작성 . . . 생략
 		}
+=======
+		// 1. 전달 받을 파일 크기 설정
+		
+		int maxSize = 1024 * 1024 * 10;
+		
+		// 2. 멀티파트 전달 확인
+		if(! ServletFileUpload.isMultipartContent(request)) {
+			request.setAttribute("exception", new Exception("리뷰 사진 등록 실패"));
+			request.setAttribute("error-msg", "멀티파트 형식 x");
+
+			request.getRequestDispatcher("vews/common/errorPage.jsp").forward(request, response);
+		}
+		
+		// 3. 저장할 경로 설정
+		String root = request.getServletContext().getRealPath("/resources");
+		String savePath = root + "/ReviewUploadFiles/";
+		
+		// 4. 멀티파트 객체 준비
+		
+		MultipartRequest mre = new MultipartRequest(request, savePath, maxSize, "UTF-8",
+									new MyRenamePolicy());
+		
+		// 다중 파일 업로드 처리하기 
+				// 원본 파일 명과 변경된 파일 명 담기 (개발자는 헷갈리지않게 원본 파일 명도 같이)
+				ArrayList<String> originNames = new ArrayList<>();
+				ArrayList<String> changeNames = new ArrayList<>();
+				
+		// 화면에서 전달한 파일 이름 가져오기 
+		Enumeration<String> files = mre.getFileNames();
+		
+		while(files.hasMoreElements()) {
+			// 가져온 파일 하나씩 꺼내오기
+			String tagName = files.nextElement();
+			
+			originNames.add(mre.getOriginalFileName(tagName));
+			changeNames.add(mre.getFilesystemName(tagName));
+			
+			
+			System.out.println("tagName : " + tagName);
+			System.out.println(originNames);
+			System.out.println(changeNames);
+			
+		}
+		
+		// ------------여기까지 문제 없었음 (중간 점검) ------------------- //
+				// 썸네일 게시글 저장하기 
+				Review r = new Review();
+				r.setUserid(mre.getParameter("userId"));
+				r.setRcontent(mre.getParameter("rcontent"));
+				
+				
+				// Attachment 객체를 생성 후 파일 정보를 저장 하기 
+				ArrayList<productfile> list = new ArrayList<>();
+				
+				for(int i = originNames.size() - 1; i >= 0; i--) {
+					// 기존에 역순으로 가져온 파일들을 올바른 순서로 재정렬
+					productfile pf = new productfile();
+					
+					pf.setFilepath(savePath);
+					pf.setOriginname(originNames.get(i));
+					pf.setChangename(changeNames.get(i));
+					
+					list.add(pf);
+				}
+				
+				ReviewService rs = new ReviewService();
+				
+				int result = ts.insertThumbnail(t, list);
+				
+				if( result > 0) {
+					response.sendRedirect("selectList.tn");
+				} else {
+					request.setAttribute("exception", new Exception("사진 추가 에러 !"));
+					request.setAttribute("error-msg", "게시글 저장 실패 ");
+				
+					request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
+				}
+				
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+>>>>>>> refs/remotes/origin/master
 		
 	}
 	}
