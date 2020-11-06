@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.meiri.jsp.member.model.vo.*"%>
-<%
-   Member m = (Member)session.getAttribute("member");
-%>    
+    pageEncoding="UTF-8" import="com.meiri.jsp.member.model.vo.*, com.meiri.jsp.review.*, java.util.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -228,7 +226,7 @@
          <div class="proudct_specs" style="float:right; width:50%">
             <h2>LED 루미스 욕실등 30W</h2>
             <h3>제품규격　 : 　W1,050 x H3,300 <br>
-               사용램프　 : 　E26 EL 45W, LED 30W</h3>
+         	      사용램프　 : 　E26 EL 45W, LED 30W</h3>
             <p>타입 A : 120W   /  타입 B : 160W
                </p>
             <form action="">
@@ -301,10 +299,10 @@
                       </p>
 
 
-                      <form action="<%= request.getContextPath() %>/insert.re" style="margin:0;" method="post" enctype="multipart/form-data">
+                      <form action="meiri/insert.re" style="margin:0;" method="post" enctype="multipart/form-data">
                           <!-- 파일, 상품 번호, 리뷰 내용, 회원 번호 넘겨줘야함 -->
-                        <input type="hidden" name="userId" value="<%= m.getUserId() %>">
-                     <%--    <input type="hidden" name="bno" value="<%= b.getBno() %>" /> --%>
+                        <input type="hidden" name="userId" value="1">
+              <!-- 		    <input type="hidden" name="pcode" value="1" />  -->
                         
                         
                       <textarea name="rcontent" id="rcontent" cols="95" rows="10" value placeholder="내용을 입력해주세요."style="resize:none;"></textarea>
@@ -322,7 +320,7 @@
             </div>
          </div>
       </div>
->>>>>>> refs/remotes/origin/master
+
 
       <section class="product_review">
          <div class="container">
@@ -339,18 +337,17 @@
                            <div style="width: 200px; margin-top:10px; margin-bottom: 10px; margin-right: 10px;">
                               <img style="width:100%;" id="reviewImg" src="../../resources/images/product/5.gif">
                            </div>
-                           <div><p>제품이 너무나도 좋아요!! 파티에 이용하였는데 아주 만족스러웠습니다.
-                              다음에도 이용할게요!</p>
+                           <div><p>getcontent</p>
                            </div>
                         </div>
                         <div class="list_right" style="margin-left: 55px;">
                            <br>
                            <div>
-                              <u style="color:grey">작성자</u><br><strong>이름</strong>
+                              <u style="color:grey">작성자</u><br><strong>GET작성자</strong>
                            </div>   
                            <br>
                            <div>
-                              <u style="color:grey">작성일자</u><br><strong>get작성일</strong>
+                              <u style="color:grey">작성일자</u><br><strong>getdate</strong>
                            </div>
                         </div>
                      </div>
