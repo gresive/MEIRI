@@ -10,6 +10,22 @@
  .title{
    color :  navy
  };
+ 
+ .serch{
+    width100%; height:40px; border-bottom:1px dashed #999;
+    box-sizing:border-box; line-height: 40px; text-align:center;
+    margin-bottom: 20px;
+ }
+ 
+ .serch span{
+    font-size: 11px; color: #999; 
+ }
+ 
+ .serch a{
+    font-size:12px; text-decoration:none; background-color: #333;
+    color: #fff; padding: 3px 5px; border-radius: 3px; margin-left: 5px;
+ }
+ 
 </style>
 </head>
 <body>
@@ -35,8 +51,13 @@
  <td align="center"><input type="password" id="password" name="password" required="required"
       placeholder="비밀번호"></td>
 </tr>
+<div class="search">
+<span class="text">아이디 또는 비밀번호를 잊으셨나요?</span>
+<a href="#">ID/PW찾기</a>
+</div>
 
 </table>
+
 <br /><br />
 
 <div align="center" >

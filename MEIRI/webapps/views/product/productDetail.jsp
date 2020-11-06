@@ -212,11 +212,9 @@
 
 .size, .color, .quantity{
  	  margin-right: 40px;
->>>>>>> refs/remotes/origin/master
+
 }
-.size, .color, .quantity{
-	margin-right: 40px;
-}
+
 
 </style>
 </head>
