@@ -1,82 +1,53 @@
 package com.meiri.jsp.review.model.service;
 
+
+import static com.meiri.jsp.common.JDBCTemplate.getConnection;
 import static com.meiri.jsp.common.JDBCTemplate.close;
 
 import java.sql.Connection;
 import java.util.ArrayList;
 
 import com.meiri.jsp.review.model.dao.ReviewDAO;
-import com.meiri.jsp.review.model.vo.Attachment;
 import com.meiri.jsp.review.model.vo.Review;
+import com.meiri.jsp.review.model.vo.productFile;
 
 public class ReviewService {
-	
-	private Connection con;
-	private ReviewDAO rDAO = new ReviewDAO();
-	
-	
-	public ArrayList<Review> selectList() {
-		con = getConnection();
-		
-		ArrayList<Review> list = rDAO.selectList(con);
-		
-		close(con);
-		
-		
-		return list;
-	}
+   
+   private Connection con;
+   private ReviewDAO rDAO = new ReviewDAO();
+   
+/*   
+   public ArrayList<Review> selectList() {
+      con = getConnection();
+      
+      ArrayList<Thumbnail> list = tDAO.selectList(con);
+      
+      close(con);
+      
+      
+      return list;
+   }
+*/
 
 
-	public int ReviewInsert(Review r, ArrayList<Attachment> list) {
-		con = getConnection();
-		
-		int result = 0;
-		
-		// 저장해야 될 것 이 두 가지 ( 사진 게시글 , 첨부파일 여러 개) 
-		// 1. 사진 게시글 저장
-		int result1 = rDAO.insertThumbnail(con, t);
-		
-		if(result1 > 0) {
-			int bno = rDAO.getCurrentBno(con);
-			System.out.println(bno);
-			
-			for(int i = 0; i < list.size(); i++) {
-				list.get(i).setBno(bno);
-			}
-		}
-		
-		// 2. 첨부파일 여러 개 저장
-		int result2 = 0;
-		for(int i = 0; i < list.size(); i++) {
-			// 첫번째 이미지는 대표 이미지 (flevel = 0)
-			// 나머지는 서브이미지 (flevel = 1)로 설정한다. 
-			
-			list.get(i).setFlevel(i == 0 ? 0 : 1);
-			
-			result2 = rDAO.insertAttachment(con,  list.get(i));
-			
-			if( result2 == 0) {
-				break; // 잘못 실행된 행이 있다면 반복(insert) 취소! 
-			} 
-			
-			
-		}
-		
-		if(result1 > 0 && result2 > 0) {
-			commit(con);
-			result = 1;
-		}else {
-			rollback(con);
-		}
-		
-		close(con);
-		
-		
-		
-		
-		return result;
-	}
-	
-	
-	
+
+   public int insertReview(Review r, ArrayList<productFile> list) {
+      con = getConnection();
+      
+      
+      
+      // 저장해야 될 것 이 두 가지 ( 사진 게시글 , 첨부파일 여러 개) 
+      // 1. 사진 게시글 저장
+      int result = rDAO.insertReview(con, r);   
+      
+      
+      close(con);   
+      
+      
+      return result;
+      
+   }
+   
+   
+   
 }
