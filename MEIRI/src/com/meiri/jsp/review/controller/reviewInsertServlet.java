@@ -9,10 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
 
+
 import com.meiri.jsp.common.MyRenamePolicy;
+import com.meiri.jsp.member.model.vo.Member;
 import com.meiri.jsp.review.model.service.ReviewService;
 import com.meiri.jsp.review.model.vo.Review;
 import com.meiri.jsp.review.model.vo.productFile;
@@ -57,6 +60,15 @@ public class reviewInsertServlet extends HttpServlet {
 				MultipartRequest mre = new MultipartRequest(request, savePath, maxSize, "UTF-8", 
 											new MyRenamePolicy());
 				
+				HttpSession session = request.getSession(false);
+				
+				Member users =(Member) session.getAttribute("users");
+				
+				// 5-1. 기본 전송값 처리하기
+			    String rcontent = mre.getParameter("rcontent");
+			    int pcode = Integer.parseInt(mre.getParameter("pcode"));
+			    
+			    
 				// 다중 파일 업로드 처리하기 
 				// 원본 파일 명과 변경된 파일 명 담기 (개발자는 헷갈리지않게 원본 파일 명도 같이)
 				ArrayList<String> originNames = new ArrayList<>();
@@ -64,6 +76,8 @@ public class reviewInsertServlet extends HttpServlet {
 				
 				// 화면에서 전달한 파일 이름 가져오기 
 				Enumeration<String> files = mre.getFileNames();
+				
+				
 				
 				while(files.hasMoreElements()) {
 					// 가져온 파일 하나씩 꺼내오기
@@ -83,6 +97,8 @@ public class reviewInsertServlet extends HttpServlet {
 				Review r = new Review();
 				r.setUserid(mre.getParameter("userId"));
 				r.setRcontent(mre.getParameter("rcontent"));
+				r.setPcode(pcode);
+				
 				
 				
 				// Attachment 객체를 생성 후 파일 정보를 저장 하기 
@@ -106,14 +122,14 @@ public class reviewInsertServlet extends HttpServlet {
 				int result = rs.insertReview(r, list);
 				
 				if( result > 0) {
-					response.sendRedirect("index.jsp");
+					request.setAttribute("list", list);
+					response.sendRedirect("views/product/productDetail.jsp");
 				} else {
 					request.setAttribute("exception", new Exception("사진 추가 에러 !"));
 					request.setAttribute("error-msg", "게시글 저장 실패 ");
 				
 					request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
 				}
-				
 				
 	
 	

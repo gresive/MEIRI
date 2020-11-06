@@ -1,8 +1,7 @@
 package com.meiri.jsp.review.model.service;
 
 
-import static com.meiri.jsp.common.JDBCTemplate.getConnection;
-import static com.meiri.jsp.common.JDBCTemplate.close;
+import static com.meiri.jsp.common.JDBCTemplate.*;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -16,19 +15,17 @@ public class ReviewService {
 	private Connection con;
 	private ReviewDAO rDAO = new ReviewDAO();
 	
-/*	
+
+
 	public ArrayList<Review> selectList() {
 		con = getConnection();
 		
-		ArrayList<Thumbnail> list = tDAO.selectList(con);
+		ArrayList<Review> list = rDAO.selectList(con);
 		
 		close(con);
-		
-		
-		return list;
+		return null;
 	}
-*/
-
+	
 
 
 	public int insertReview(Review r, ArrayList<productFile> list) {
@@ -40,6 +37,11 @@ public class ReviewService {
 		// 1. 사진 게시글 저장
 		int result = rDAO.insertReview(con, r);	
 		
+		if(result > 0) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
 		
 		close(con);	
 		
@@ -47,7 +49,7 @@ public class ReviewService {
 		return result;
 		
 	}
-	
+
 	
 	
 }
