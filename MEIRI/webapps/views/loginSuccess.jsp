@@ -7,7 +7,7 @@
 <title>로그인 성공 화면</title>
 </head>
 <body>
-<%@ include file="/views/common/header.jsp" %>
+
 	
 	<h1>로그인 성공!</h1>
 	<h3><%= m.getUserName() %>님, 환영합니다!!</h3>

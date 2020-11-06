@@ -7,7 +7,7 @@
 <title>로그인 실패 화면</title>
 </head>
 <body>
-<%@ include file="/views/common/header.jsp" %>
+
 	
 	<h1>로그인 실패!!</h1>
 	
